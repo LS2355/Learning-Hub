@@ -10,4 +10,13 @@ this project will do three things.
 HOME PAGE
 -when you first open up the site the first thing that you will see is the day plane
 
+// colors 
+background: black
+card backgrounds: 
+1. # 333333
+2. gradiant- bottom: #121212 top: #333333
+
+icons:
+hover- white
+offhover- #4D4D4D
 
