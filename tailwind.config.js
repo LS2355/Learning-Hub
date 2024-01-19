@@ -14,9 +14,12 @@ export default {
         hoveredGrey: '#2c2c2c',
         cardbg: '#191919',
         subtext: '#515151',
-        border: '#171717',
+        borderColor: 'grey',
         focused: "white",
         spotify: "#1db954",
+        easy: "green",
+        medium: "blue",
+        hard: "red"
 
 
       },

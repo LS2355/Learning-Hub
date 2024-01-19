@@ -3,13 +3,12 @@ import { useState } from "react";
 
 
 
-
 export function Sidebar() {
 
   const [personalizeMenuOpen, setPersonalizeMenyOpen] = useState(false)  
 
   return (
-      <nav className="w-20 bg-navbar h-screen hidden sm:grid md:w-24 place-items-center sticky top-0">
+      <nav className="w-20 bg-navbar h-screen hidden sm:grid md:w-24 place-items-center sticky top-0 border-r-2 border-hoveredGrey ">
           <div className="w-full h-1/2 flex justify-start flex-col items-center">
             {/* tabs */}
             <NavLink to={"./"} className="w-10/12 bg-cardbg  text-subtext grid place-items-center aspect-square hover:bg-hoveredGrey hover:text-focused rounded-lg mb-3 transition-all hover:scale-105">

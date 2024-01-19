@@ -1,4 +1,4 @@
-import LearningData from "../../temp-data"
+import LearningData from "../data/temp-data";
 import { useState } from "react";
 
 export function Learning () {
