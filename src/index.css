@@ -30,8 +30,11 @@
 .close-button{
     fill: grey
 }
+ 
+/*  note section on practice page */
 
-.search-bar {
+
+.note-box {
   width: 200px;
   height: 26px;
   border-radius: 5px;
@@ -40,22 +43,63 @@
   border-bottom: 2px solid #9a9a9a;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #2d2d2d;
-  color: white;
+  background-color: #25252583;
+  color: rgb(77, 77, 77);
   transition: all 0.3s ease;
 }
 
-.search-bar::placeholder {
-  color: #9a9a9a;
+.note-box::placeholder {
+  color: #575757;
 }
 
-.search-bar:hover {
+.note-box:hover {
   background-color: #313131;
 }
-
-.search-bar:active,
-.search-bar:focus {
-  background-color: #1e1f20;
+u
+.note-box:active,
+.note-box:focus {
+  background-color: #1e1f2052;
   border: 1px solid #2d2d2d;
   border-bottom: 2px solid #a7bbc5;
+  color: aliceblue;
+}
+
+
+/* leetcode link underline effect */
+.leetcode_link {
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.leetcode_link:focus,
+.leetcode_link:hover {
+  color: #fff;
+}
+
+.leetcode_link:focus:after,
+.leetcode_link:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.leetcode_link:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(107 114 128);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.bubbleGum{
+  background-color: pink;
 }

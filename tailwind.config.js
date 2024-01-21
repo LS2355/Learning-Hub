@@ -6,6 +6,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    safelist: [
+      "done",
+      "workingOn",
+      "retry",
+      "next"
+    ],
     extend:{
       colors:{
         card1: '#121212',
@@ -17,10 +23,10 @@ export default {
         borderColor: 'grey',
         focused: "white",
         spotify: "#1db954",
-        easy: "green",
-        medium: "blue",
-        hard: "red"
-
+        "done": "#16a34a",
+        "workingOn": "#facc15",
+        "retry": "#EA580C",
+        "next": "#93c5fd",
 
       },
     },
