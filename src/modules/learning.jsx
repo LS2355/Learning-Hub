@@ -1,21 +1,30 @@
 import LearningData from "../data/temp-data";
 import { useState } from "react";
+import { QuestionsPage } from "./questionsPage";
 
-export function Learning () {
+export function Learning (Props) {
+
+  const {questionIconClicked, setQuestionIconClicked} = Props
 
   const [learningCardOpen, setLearningCardOpen] = useState(false)
   const [currentActiveCard, setCurrentActiveCard] = useState(null)
   const learningCards = [];
+
   
     function openDSACard(index) {
       setLearningCardOpen(true)
       setCurrentActiveCard(index)
     }
+
+
     function closeDSACard() {
       setLearningCardOpen(false)
       setCurrentActiveCard(null)
     }
 
+
+
+    
   LearningData.forEach((data, index)=>{
     const {dataStructure, shortDescription, smallImg} = data
 
@@ -23,6 +32,7 @@ export function Learning () {
     const generatedCard = (
       <div key={index} onClick={()=>{openDSACard(index)}} 
       className=" w-5/6 max-w-72 aspect-square  bg-cardbg sm:w-2/5 sm:max-w-full learningCardBreakpoint:w-64 learningCardBreakpoint:h-64 m-3 p-2 overflow-hidden">
+        {/* add check box here */}
           <h1 className="w-full text-center text-gray-500">{dataStructure}</h1>
           <h3 className="w-full text-center text-subtext">{shortDescription}</h3> {/* try to keep this less then 10 words*/}
           <img src={smallImg} alt={`small image of ${dataStructure}`} />
@@ -82,13 +92,19 @@ content
 </div> */}
 
   return (
-    <div className="flex flex-col w-full h-full justify-center items-center my-3">
+    <div className="flex flex-col w-full h-full justify-center items-center py-3 relative">
       <div className="grid place-items-center w-full h-full"> 
         <div className="flex flex-wrap justify-center w-full h-auto">
           {learningCardOpen == false ? learningCards: <GenerateDSA />}
         </div>
 
       </div>
+      {questionIconClicked? 
+        <QuestionsPage 
+          currentPage={"learning"}
+          setQuestionIconClicked= {setQuestionIconClicked}
+        />
+        : " "}
     </div>
   )
 }

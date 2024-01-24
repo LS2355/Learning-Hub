@@ -20,6 +20,7 @@ export default {
         hoveredGrey: '#2c2c2c',
         cardbg: '#191919',
         subtext: '#515151',
+        brighterSubtext: 'rgb(134, 134, 134)',
         borderColor: 'grey',
         focused: "white",
         spotify: "#1db954",
@@ -27,6 +28,7 @@ export default {
         "workingOn": "#facc15",
         "retry": "#EA580C",
         "next": "#93c5fd",
+         "questionPageBG" : "rgba(21, 21, 21)"
 
       },
     },
