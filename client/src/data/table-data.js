@@ -1,0 +1,22 @@
+const fakeLeetCodeData = [
+{problem: "th hardest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "easy", acceptancePersentage: "52%", progress: "done", note:""},
+{problem: "the hadest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "next", note:"a short note "},
+{problem: "the hardest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "hard", acceptancePersentage: "52%", progress: "workingOn", note:"a short note "},
+{problem: "the harest poblem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "the harst problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "the harest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "the hardest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "the hardet problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "t hst problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "the hardt problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "the hkrdest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "e hardest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a long note "},
+{problem: "the hardest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "e hlkjdest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "the hardest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "retry", note:"a short note "},
+{problem: "the hardest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "", note:"a short note "},
+{problem: "the hardest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "the hardest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+{problem: "the hardest problem ever", link: "https://random.com", leetCodeNumber: "509", difficulty: "medium", acceptancePersentage: "52%", progress: "done", note:"a short note "},
+]
+export default fakeLeetCodeData

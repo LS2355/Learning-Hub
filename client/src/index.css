@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+
+.active{
+    background-color: #2c2c2c;
+    color: white;
+}
+
+
+
+.close-button-container:hover .close-button{
+    fill: rgb(177, 65, 65);
+    transition:all 400ms
+}
+
+.close-button{
+    fill: grey
+}
+ 
+/* backgroung pattern */
+
+.patternContainer {
+  background-color: #191919;
+  background-image: radial-gradient(rgba(128, 128, 128, 0.041) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+
+
+
+
+
+
+
+/*  note section on practice page */
+
+
+.note-box {
+  height: 26px;
+  border-radius: 5px;
+  outline: none;
+  border-bottom: 2px solid #9a9a9a02;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: transparent;
+  color: rgb(77, 77, 77);
+  transition: all 0.3s ease;
+}
+
+.note-box::placeholder {
+  color: #949494;
+}
+
+.note-box:hover {
+  background-color: #313131;
+}
+u
+.note-box:active,
+.note-box:focus {
+  background-color: #1e1f2052;
+  border-bottom: 2px solid #a7bbc5;
+  color: rgb(221, 221, 221);
+}
+
+
+/* leetcode link underline effect */
+.leetcode_link {
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+.leetcode_link:focus,
+.leetcode_link:hover {
+  color: #fff;
+}
+
+.leetcode_link:focus:after,
+.leetcode_link:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+.leetcode_link:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(107 114 128);
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+
+/* search bar */
+
+.search-bar {
+
+  line-height: 21px;
+  border: 2px solid transparent;
+  border-bottom-color: #777;
+  padding: .2rem 0;
+  outline: none;
+  background-color: transparent;
+  color: #c2c2c2;
+  transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+ }
+ 
+ .search-bar:focus, .search-bar:hover {
+  outline: none;
+  padding: .2rem 1rem;
+
+  border-bottom-color: #7a9cc6;
+ }
+ 
+ .search-bar::placeholder {
+  color: #777;
+ }
+ 
+ .search-bar:focus::placeholder {
+  opacity: 0;
+  transition: opacity .3s;
+ }
+
+
+ 
+ 
+ /* submit-href */
+
+
+ .submit-href {
+  position: relative;
+  display: inline-block;
+  padding: 8px 16px;
+  border: 2px solid #fefefe;
+  text-transform: uppercase;
+  color: #fefefe;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  
+}
+
+.submit-href::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% - 12px);
+  background-color: #212121;
+  transition: 0.3s ease-in-out;
+  transform: scaleY(1);
+}
+
+.submit-href:hover::before {
+  transform: scaleY(0);
+}
+
+.submit-href::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: -2px;
+  height: calc(100% + 4px);
+  width: calc(100% - 12px);
+  background-color: #212121;
+  transition: 0.3s ease-in-out;
+  transform: scaleX(1);
+  transition-delay: 0.5s;
+}
+
+.submit-href:hover::after {
+  transform: scaleX(0);
+}
+
+.submit-href span {
+  position: relative;
+  z-index: 3;
+}
+
+.submit-button {
+  background-color: none;
+  text-decoration: none;
+  background-color: #212121;
+  border: none;
+}
+
+
+
+
+
+/* demo button */
+
+
+.demo-button {
+  font-family: monospace;
+  font-size: 1rem;
+  color: #808399;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #424242;
+  background: #252525;
+  cursor: pointer;
+  box-shadow: 3px 3px #424242;
+  transform: translate(0px, 0px);
+  transition: all 400ms;
+}
+
+.demo-button_live{
+  border-color: #FAFAFA;
+  box-shadow: 3px 3px #fafafa;
+  color:white;
+  transform: translate(-1px, -1px);
+  transition: all 400ms;
+}
+
+.demo-button:active {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
