@@ -1,7 +1,7 @@
-import {Learning, Practice, Navbar, Sidebar,} from "./modules"
 import { useState } from 'react'
-
 import { Routes, Route } from 'react-router-dom'
+//components
+import {Learning, Practice, Navbar, Sidebar,} from "./modules"
 
 //tm plan 
   //make it so data is updated when you press submit 
@@ -32,8 +32,7 @@ import { Routes, Route } from 'react-router-dom'
 
 
 function App() {
-  const [activeTab, setActiveTab] = useState("home")
-  const [isDemoAccount, setIsDemoAccount] = useState(true)
+
   const [questionIconClicked, setQuestionIconClicked] = useState(false)
 
   return (
@@ -52,8 +51,6 @@ function App() {
         }/>
         <Route path="/practice" element={
           <Practice 
-            isDemoAccount= {isDemoAccount}
-            setIsDemoAccount = {setIsDemoAccount}
             questionIconClicked = {questionIconClicked}
             setQuestionIconClicked = {setQuestionIconClicked}
           />
