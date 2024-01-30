@@ -248,3 +248,25 @@ u
   transform: translate(5px,5px);
   transition-duration: .3s;
 }
+
+
+/* garbage icon */
+
+.show-garbage:hover .garbage-wrapper{
+ display: block; 
+}
+
+
+.garbage-wrapper:hover .garbage-icon{
+  fill: rgb(189, 0, 0);
+
+}
+
+.garbage-wrapper{
+  display: none;
+}
+
+.garbage-icon{
+  fill: #313131;
+  transition: all 400ms;
+}

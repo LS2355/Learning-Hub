@@ -6,6 +6,8 @@ import searchProblemQuery from "./graphql/queries"
 import fakeLeetCodeData from "../data/table-data"
 //api call to leetcode 
 import fetchLeetcodeData from "./graphql/fetchData"
+//generate id
+import {nanoid} from "nanoid"
 
 
 
@@ -70,6 +72,7 @@ export function Practice (Props){
     difficulty: addFormData.difficulty,
     acceptancePersentage: addFormData.acceptancePersentage,
     note: addFormData.note,
+    id: nanoid()
     // index: addFormData.index
     }
     const newTableRows = [...tableData, newTableRow]
@@ -143,10 +146,10 @@ export function Practice (Props){
 
 
 
-  const tableRowDataTemplate = (problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, index)=>{
+  const tableRowDataTemplate = (problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id)=>{
 
     return(
-            <tr className="text-subtext border-b-2 border-borderColor m-0" id={`table-row-${index}`} key={`table-row-${index}`}>  {/* remember to delete the bottom border so it dosen't look weird */}
+            <tr className="text-subtext border-b-2 border-borderColor m-0 show-garbage" id={id} key={id}>  {/* remember to delete the bottom border so it dosen't look weird */}
               <td className="w-2/12 px-3 py-1 border-r border-borderColor ">
                 <select name="progress" className={handleProgressColor(progress)} defaultValue={progress? progress: "placeholder"} onChange={(e) =>{handleProgressElement(e)}} > 
                   <option value="placeholder" disabled >select progress</option>
@@ -162,8 +165,15 @@ export function Practice (Props){
               </td>  
               <td className="w-1/12 px-3 py-1 border-l border-r border-borderColor text-center ">{acceptancePersentage}</td>  {/* acceptance % */}
               <td className={difficultyColor(difficulty)}>{difficulty}</td>  {/* difficulty  / set color of text deppending on difficulty this will be sent on generation */}
-              <td className="w-3/12 px-3 py-1 border-l border-borderColor ">{/* notes */}      
-                <input type="text" name="text" className="note-box w-full" placeholder="..." value={note}/>
+              <td className="w-3/12 px-3 py-1 border-l border-borderColor">{/* notes */}      
+                <div className="w-full h-full flex flex-wrap justify-center">
+                <input type="text" name="text" className="note-box w-11/12 h-full" placeholder="..." value={note}/>
+                <a className="h-full w-1/12 m-auto justify-center pl-2 garbage-wrapper" onClick={()=>handleDeleteRow(id)}>
+                  <svg width="16" height="16" viewBox="0 0 16 16" className="garbage-icon">
+                    <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+                  </svg>
+                </a>
+                </div>
                 </td>        
             </tr>       
     )
@@ -218,8 +228,8 @@ return(
         <tbody className="mb-2">
           {/* {generatedTableData} */}
           {tableData.map((data, index)=> {
-            const {problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note} = data
-            return tableRowDataTemplate(problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, index)
+            const {problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id} = data
+            return tableRowDataTemplate(problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id)
           })}
         </tbody>
       </table>
