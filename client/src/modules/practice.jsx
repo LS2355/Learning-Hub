@@ -76,6 +76,21 @@ export function Practice (Props){
 
     setTableData(newTableRows)
   }
+
+
+  const handleDeleteRow = (RowId) =>{
+    const newTableRows = [...tableData]
+
+    const index = tableData.findIndex((tableRow)=>tableRow.id === RowId  )
+
+    newTableRows.splice(index, 1);
+
+    setTableData(newTableRows)
+  }
+
+
+
+
   //form style
   function handleProgressColor (enteredValue){
     console.log(enteredValue)
@@ -177,7 +192,7 @@ return(
 
     {/* demo/live button */}
       <div className="w-full flex justify-center md:justify-end">
-        <button className={`demo-button absolute top-6 sm:right-6 sm:m-auto ${!isDemoAccount ? " demo-button_live": ""}`} onClick={()=>setIsDemoAccount(!isDemoAccount)}>
+        <button className={`demo-button absolute top-6 sm:right-6 sm:m-auto ${!isDemoAccount ? " demo-button_live": ""}`} onClick={()=>setIsDemoAccount(!isDemoAccount)}> 
           {isDemoAccount? "demo": "live"}
         </button>
       </div>
@@ -228,7 +243,7 @@ return(
 
         {/* title Input */}
         <div className="text-center w-7/12">
-          <input name="problem" placeholder="Search Title" type="text" className="search-bar w-full text-center" required="required" onChange={handleAddFormChange}/>?
+          <input name="problem" placeholder="Search Title" type="text" className="search-bar w-full text-center" required="required" onChange={handleAddFormChange}/>
         </div>
         {/* title Input */}
         
