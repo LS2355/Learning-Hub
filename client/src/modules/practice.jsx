@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef} from "react"
+import { useEffect, useState} from "react"
 //componets
 import { QuestionsPage } from "./questionsPage"
 //fake data
@@ -19,7 +19,9 @@ export function Practice (Props){
   //demoAccount
   const [isDemoAccount, setIsDemoAccount] = useState(true)
   //form
-  const [tableData, setTableData] = useState(fakeLeetCodeData)
+  const [tableData, setTableData] = useState(()=>{
+    return tableSort(fakeLeetCodeData)
+  })
   const [addFormData, setAddFormData] = useState({
     problem: "",
     progress: "",
@@ -44,6 +46,20 @@ export function Practice (Props){
     return count
   })
 
+  //sorting the table 
+    function tableSort (data) {
+      const newdata = data.sort((a,b) => {
+        const progressA = a.progress;
+        const progressB = b.progress;
+
+        if (progressA > progressB) return -1
+        if (progressA < progressB) return 1
+        return 0
+      })
+    
+      return newdata
+      // in this function we will sort the data so that the objects with progress: "done" will be at the bottom of the list
+    }
 
 
   //form 
@@ -73,9 +89,10 @@ export function Practice (Props){
     acceptancePersentage: addFormData.acceptancePersentage,
     note: addFormData.note,
     id: nanoid()
-    // index: addFormData.index
     }
-    const newTableRows = [...tableData, newTableRow]
+    const TableRowsArray = [...tableData, newTableRow]
+
+    const newTableRows = tableSort(TableRowsArray)
 
     setTableData(newTableRows)
   }
@@ -91,12 +108,22 @@ export function Practice (Props){
     setTableData(newTableRows)
   }
 
-
+  const handleRowUpdate = (progressOrNote, RowId, value) => {
+    const newTableRows = [...tableData]
+    const index = tableData.findIndex((tableRow)=>tableRow.id === RowId)
+    if (progressOrNote == "progress"){
+      newTableRows[index].progress = value
+    }else if(progressOrNote == "note"){
+      newTableRows[index].note = value
+    }
+    console.log("handle ROw update value", value)
+    setTableData(newTableRows)  //i actually just want this to update where ever the data is saved in the local storge im gonna change this tommarow
+    console.log("this is the new table data: ",tableData)
+  }
 
 
   //form style
   function handleProgressColor (enteredValue){
-    console.log(enteredValue)
     if (enteredValue == "done"){
       return "text-white bg-done w-full"
     }
@@ -127,7 +154,7 @@ export function Practice (Props){
   }
 
   // handles Progress (select) element
-  function handleProgressElement (e) {
+  function handleProgressElement (e, rowId) {
     e.target.className = handleProgressColor(e.target.value);
     if(!isDemoAccount) console.log("update local storage with new progress status") //dont forget to update this
     if(e.target.value== "done"){
@@ -135,23 +162,25 @@ export function Practice (Props){
     }else{
       setProblemsCompleted((prev)=>prev - 1)
     }
+    if(rowId != null){
+    handleRowUpdate("progress", rowId, e.target.value)
+    const oldSortedTable = [...tableData]
+    const newSortedTable = tableSort(oldSortedTable)
+
+    setTableData(newSortedTable)
+    }
   }
 
 
 
-  //sorting the table 
-    function tableSort () {
-      // in this function we will sort the data so that the objects with progress: "done" will be at the bottom of the list
-    }
-
 
 
   const tableRowDataTemplate = (problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id)=>{
-
+    link = `https://leetcode.com/problems/${link}` 
     return(
             <tr className="text-subtext border-b-2 border-borderColor m-0 show-garbage" id={id} key={id}>  {/* remember to delete the bottom border so it dosen't look weird */}
               <td className="w-2/12 px-3 py-1 border-r border-borderColor ">
-                <select name="progress" className={handleProgressColor(progress)} defaultValue={progress? progress: "placeholder"} onChange={(e) =>{handleProgressElement(e)}} > 
+                <select name="progress" className={handleProgressColor(progress)} defaultValue={progress? progress: "placeholder"} onChange={(e) =>{handleProgressElement(e, id)}} > 
                   <option value="placeholder" disabled >select progress</option>
                   <option value="done">done</option>                                                                                   
                   <option value="workingOn">working on</option>                                                                               
@@ -167,7 +196,7 @@ export function Practice (Props){
               <td className={difficultyColor(difficulty)}>{difficulty}</td>  {/* difficulty  / set color of text deppending on difficulty this will be sent on generation */}
               <td className="w-3/12 px-3 py-1 border-l border-borderColor">{/* notes */}      
                 <div className="w-full h-full flex flex-wrap justify-center">
-                <input type="text" name="text" className="note-box w-11/12 h-full" placeholder="..." value={note}/>
+                <input type="text" name="text" className="note-box w-11/12 h-full" placeholder="..." defaultValue={note} onInput={(e)=>handleRowUpdate("note", id, e.target.value)} />
                 <a className="h-full w-1/12 m-auto justify-center pl-2 garbage-wrapper" onClick={()=>handleDeleteRow(id)}>
                   <svg width="16" height="16" viewBox="0 0 16 16" className="garbage-icon">
                     <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
@@ -176,6 +205,8 @@ export function Practice (Props){
                 </div>
                 </td>        
             </tr>       
+
+            
     )
   }
 
@@ -227,7 +258,7 @@ return(
         </thead> 
         <tbody className="mb-2">
           {/* {generatedTableData} */}
-          {tableData.map((data, index)=> {
+          {tableData.map((data)=> {
             const {problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id} = data
             return tableRowDataTemplate(problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id)
           })}
@@ -241,7 +272,7 @@ return(
       <form className="flex flex-wrap w-5/6 mt-6 py-2 border-borderColor" onSubmit={handleAddFormSubmit}>
         {/* progress input */}
         <div className="w-2/12 grid place-content-center">
-          <select name="progress" className="text-white bg-navbar w-11/12 h-full" defaultValue="placeholder" required="required" onChange={(e) => {handleProgressElement(e); handleAddFormChange(e)}} > 
+          <select name="progress" className="text-white bg-navbar w-11/12 h-full" defaultValue="placeholder" required="required" onChange={(e) => {handleProgressElement(e, null); handleAddFormChange(e)}} > 
             <option value="placeholder" disabled >select progress</option>
             <option value="done">done</option>                                                                             :     
             <option value="workingOn">working on</option>                                                                               
