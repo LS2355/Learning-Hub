@@ -1,3 +1,7 @@
+i'm going to properly update this when i'm done with it
+
+
+
 Description:
 this project will do three things. 
 1. display basic data structures and how they work.
