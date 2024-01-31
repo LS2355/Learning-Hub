@@ -1,13 +1,10 @@
-import { useEffect, useState} from "react"
+import {useState} from "react"
 //componets
 import { QuestionsPage } from "./questionsPage"
+import { InputForm } from "./form"
 //fake data
-import searchProblemQuery from "./graphql/queries"
 import fakeLeetCodeData from "../data/table-data"
-//api call to leetcode 
-import fetchLeetcodeData from "./graphql/fetchData"
 //generate id
-import {nanoid} from "nanoid"
 
 
 
@@ -22,20 +19,9 @@ export function Practice (Props){
   const [tableData, setTableData] = useState(()=>{
     return tableSort(fakeLeetCodeData)
   })
-  const [addFormData, setAddFormData] = useState({
-    problem: "",
-    progress: "",
-    link: "",
-    leetCodeNumber: "",
-    difficulty: "",
-    acceptancePersentage: "",
-    note: "",
-    index: ""
 
-  })
   //problems
-  const [problemSearchResults, setProblemSearchResults] = useState([])
-  const [searchbarInput, setSearchbarInput] = useState("")
+
   const [problemsCompleted, setProblemsCompleted]= useState(()=>{
     let count = 0
     for(let i in tableData){
@@ -63,63 +49,10 @@ export function Practice (Props){
 
 
   //form 
-  const handleAddFormChange = (event) => {  //call this function whan any of out inputs change ... add to input elements with onChange()
-    event.preventDefault();
-
-    const fieldName = event.target.getAttribute('name')
-    const fieldvalue = event.target.value
 
 
-    const newFormData = {...addFormData}
-    newFormData[fieldName] = fieldvalue
-
-    setAddFormData(newFormData)
-  }
 
 
-  const handleAddFormSubmit = (event) => {
-    event.preventDefault()
-    
-    const newTableRow = {
-    problem: addFormData.problem,
-    progress: addFormData.progress,
-    link: addFormData.link,
-    leetCodeNumber: addFormData.leetCodeNumber, 
-    difficulty: addFormData.difficulty,
-    acceptancePersentage: addFormData.acceptancePersentage,
-    note: addFormData.note,
-    id: nanoid()
-    }
-    const TableRowsArray = [...tableData, newTableRow]
-
-    const newTableRows = tableSort(TableRowsArray)
-
-    setTableData(newTableRows)
-  }
-
-
-  const handleDeleteRow = (RowId) =>{
-    const newTableRows = [...tableData]
-
-    const index = tableData.findIndex((tableRow)=>tableRow.id === RowId  )
-
-    newTableRows.splice(index, 1);
-
-    setTableData(newTableRows)
-  }
-
-  const handleRowUpdate = (progressOrNote, RowId, value) => {
-    const newTableRows = [...tableData]
-    const index = tableData.findIndex((tableRow)=>tableRow.id === RowId)
-    if (progressOrNote == "progress"){
-      newTableRows[index].progress = value
-    }else if(progressOrNote == "note"){
-      newTableRows[index].note = value
-    }
-    console.log("handle ROw update value", value)
-    setTableData(newTableRows)  //i actually just want this to update where ever the data is saved in the local storge im gonna change this tommarow
-    console.log("this is the new table data: ",tableData)
-  }
 
 
   //form style
@@ -170,9 +103,27 @@ export function Practice (Props){
     setTableData(newSortedTable)
     }
   }
+//change table data  
+  //deletes row
+  const handleDeleteRow = (RowId) =>{
+    const newTableRows = [...tableData]
+    const index = tableData.findIndex((tableRow)=>tableRow.id === RowId  )
 
+    newTableRows.splice(index, 1);
+    setTableData(newTableRows)
+  }
 
-
+  //updates status and or note
+   const handleRowUpdate = (progressOrNote, RowId, value) => {
+   const newTableRows = [...tableData]
+   const index = tableData.findIndex((tableRow)=>tableRow.id === RowId)
+   if (progressOrNote == "progress"){
+     newTableRows[index].progress = value
+   }else if(progressOrNote == "note"){
+     newTableRows[index].note = value
+   }
+   setTableData(newTableRows)  //i actually just want this to update where ever the data is saved in the local storge im gonna change this tommarow
+  }
 
 
   const tableRowDataTemplate = (problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id)=>{
@@ -192,7 +143,7 @@ export function Practice (Props){
               <td className="w-4/12 px-4 py-1 border-l border-r border-borderColor text-center text-brighterSubtext">{/* problem title  and link to problem*/}
                 <a className="leetcode_link" href={link} target="blank_">{problem}</a>
               </td>  
-              <td className="w-1/12 px-3 py-1 border-l border-r border-borderColor text-center ">{acceptancePersentage}</td>  {/* acceptance % */}
+              <td className="w-1/12 px-3 py-1 border-l border-r border-borderColor text-center ">{`${acceptancePersentage} %`}</td>  {/* acceptance % */}
               <td className={difficultyColor(difficulty)}>{difficulty}</td>  {/* difficulty  / set color of text deppending on difficulty this will be sent on generation */}
               <td className="w-3/12 px-3 py-1 border-l border-borderColor">{/* notes */}      
                 <div className="w-full h-full flex flex-wrap justify-center">
@@ -211,14 +162,7 @@ export function Practice (Props){
   }
 
 
-    //leetcode fetch api (graphQl)
-    //i know this is inefficent but i cant figure it out right now. i'm gonna come back to it but for now this shit is pissing me off.
-    // i need to figure out a way to do this in the lower forEach loop without getting a "to many re-renders" error
-    // but still technicaly O(n) time, just actually O(2n)seEffect(()=>{
-      useEffect(()=>{
-    const searchResults = fetchLeetcodeData(searchProblemQuery,searchbarInput)
-    setProblemSearchResults(searchResults)
-  },[searchbarInput])
+
 
 
 
@@ -251,7 +195,7 @@ return(
             <td>status</td>  
             <td>#</td>
             <td>Problem</td>
-            <td>acceptance</td>
+            <td>AC rate</td>
             <td>difficulty</td>
             <td>quick note</td>
           </tr>  
@@ -269,43 +213,12 @@ return(
       <div className="w-full flex justify-center text-xl italic text-gray-400 mt-6">Select search reasult to properly populate table data </div>
       
       {/* input form */}
-      <form className="flex flex-wrap w-5/6 mt-6 py-2 border-borderColor" onSubmit={handleAddFormSubmit}>
-        {/* progress input */}
-        <div className="w-2/12 grid place-content-center">
-          <select name="progress" className="text-white bg-navbar w-11/12 h-full" defaultValue="placeholder" required="required" onChange={(e) => {handleProgressElement(e, null); handleAddFormChange(e)}} > 
-            <option value="placeholder" disabled >select progress</option>
-            <option value="done">done</option>                                                                             :     
-            <option value="workingOn">working on</option>                                                                               
-            <option value="retry">retry later</option>
-            <option value="next">next</option>
-          </select> 
-        </div>
-        {/* progress input */}
-
-        {/* title Input */}
-        <div className="text-center w-7/12">
-          <input name="problem" placeholder="Search Title" type="text" className="search-bar w-full text-center" required="required" onChange={handleAddFormChange}/>
-        </div>
-        {/* title Input */}
-        
-        {/* note Input */}
-        <div className="text-center w-3/12">
-          <input name="note" id="inputNote" placeholder="short note...." type="text" className="search-bar w-11/12 text-center" onChange={handleAddFormChange}/>
-        </div>
-        {/* note Input */}
-
-        {/* submit button */}
-        <div className="w-full mt-4 mr-4">
-          <button className="submit-button float-right" type="submit">
-            <svg className="svgSubmit" viewBox="0 0 16 16">
-              <path d="M3.5 6a.5.5 0 0 0-.5.5v8a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5v-8a.5.5 0 0 0-.5-.5h-2a.5.5 0 0 1 0-1h2A1.5 1.5 0 0 1 14 6.5v8a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 14.5v-8A1.5 1.5 0 0 1 3.5 5h2a.5.5 0 0 1 0 1z"/>
-              <path d="M7.646.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 1.707V10.5a.5.5 0 0 1-1 0V1.707L5.354 3.854a.5.5 0 1 1-.708-.708z"/>
-            </svg>
-          </button>
-        </div>
-        {/* submit button */}
-      </form>
-      {/* input form */}
+      <InputForm
+        tableData= {tableData}
+        setTableData = {setTableData}
+        tableSort = {tableSort}
+        handleProgressElement = {handleProgressElement}
+      />
   
 
       {/* if question icon is clicked then diplay questions */}
