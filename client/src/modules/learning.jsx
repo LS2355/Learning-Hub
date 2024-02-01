@@ -1,6 +1,6 @@
 import LearningData from "../data/temp-data";
 import { useState } from "react";
-import { QuestionsPage } from "./questionsPage";
+import { QuestionsPage } from "./QuestionsPage";
 
 export function Learning (Props) {
 

@@ -1,7 +1,8 @@
-import {useState} from "react"
+import {useState, useEffect} from "react"
 //componets
-import { QuestionsPage } from "./questionsPage"
+import { QuestionsPage } from "./QuestionsPage"
 import { InputForm } from "./form"
+
 //fake data
 import fakeLeetCodeData from "../data/table-data"
 //generate id
@@ -16,8 +17,27 @@ export function Practice (Props){
   //demoAccount
   const [isDemoAccount, setIsDemoAccount] = useState(true)
   //form
+
   const [tableData, setTableData] = useState(()=>{
-    return tableSort(fakeLeetCodeData)
+    if(!isDemoAccount){
+      //if data exist
+      let data =  JSON.parse(localStorage.getItem('data')) 
+      console.log(typeof newdata)
+      if(data !== null){
+        if(data.length && data.length > 1){
+          return tableSort(data)
+        }else{
+          return data
+        }
+      }else{
+        return data
+      }
+
+    }
+    else{
+      return tableSort(fakeLeetCodeData)
+    }
+
   })
 
   //problems
@@ -50,8 +70,35 @@ export function Practice (Props){
 
   //form 
 
+  //set localStorage data
+  useEffect(()=>{
+    if(!isDemoAccount){
+      localStorage.setItem('data', JSON.stringify(tableData))
+    }
+  },[tableData])
 
-
+  //switch between localStorage and mock data
+  function dataSwap () {
+    if(isDemoAccount){
+      setIsDemoAccount(false)
+      let data =  JSON.parse(localStorage.getItem('data')) 
+      if(data !== null){
+        if(data.length && data.length > 1){
+          let sortedData = tableSort(data)
+          setTableData(sortedData)
+        }else{
+          setTableData(data)
+        }
+      }else{
+        setTableData(data)
+      } 
+    }else{
+      setIsDemoAccount(true)
+      let sortedData = tableSort(fakeLeetCodeData)
+      setTableData(sortedData)
+      
+    }
+  }
 
 
 
@@ -177,7 +224,7 @@ return(
 
     {/* demo/live button */}
       <div className="w-full flex justify-center md:justify-end">
-        <button className={`demo-button absolute top-6 sm:right-6 sm:m-auto ${!isDemoAccount ? " demo-button_live": ""}`} onClick={()=>setIsDemoAccount(!isDemoAccount)}> 
+        <button className={`demo-button absolute top-6 sm:right-6 sm:m-auto ${!isDemoAccount ? " demo-button_live": ""}`} onClick={dataSwap}> 
           {isDemoAccount? "demo": "live"}
         </button>
       </div>
@@ -202,10 +249,13 @@ return(
         </thead> 
         <tbody className="mb-2">
           {/* {generatedTableData} */}
-          {tableData.map((data)=> {
+          {isDemoAccount ? (tableData == null ? "": tableData.map((data)=> {
             const {problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id} = data
             return tableRowDataTemplate(problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id)
-          })}
+          })):(tableData == null ? "": tableData.map((data)=> {
+            const {problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id} = data
+            return tableRowDataTemplate(problem, link, leetCodeNumber, difficulty, acceptancePersentage, progress, note, id)
+          }))}
         </tbody>
       </table>
       {/* leetcode table */}

@@ -56,6 +56,7 @@ export function InputForm (Props) {
     }
 
 
+
     let {acRate, difficulty, frontendQuestionId, title, titleSlug}=searchResultSelected
     difficulty = difficulty.toLowerCase()
     acRate = Math.floor(acRate) //get rid of decimal
@@ -70,12 +71,16 @@ export function InputForm (Props) {
       note: addFormData.note,
       id: nanoid()
     }
-    const TableRowsArray = [...tableData, newTableRow]
-
+    let TableRowsArray
+    if(tableData){
+      TableRowsArray = [...tableData, newTableRow]
+    }else{
+      TableRowsArray = [newTableRow]
+    }
     const newTableRows = tableSort(TableRowsArray)
 
     setTableData(newTableRows)
-    setSearchResultSelected(false)
+    setSearchResultSelected(false);
   }
   
   

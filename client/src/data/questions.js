@@ -19,13 +19,10 @@ const practicePageQuestions = [
 
 const learningPageQuestions = [
   {
-    question: "add quest",
-    answer: "add answer here "
-  },
-  {
-    question: "add qkdfj",
-    answer: "fkdsaflkjs"
+    question: "have questions?",
+    answer: "please send them through the git repo"
   }
+
 ]
 
 export default {
