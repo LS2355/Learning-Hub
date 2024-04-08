@@ -27,19 +27,38 @@ export function Learning (Props) {
     
   LearningData.forEach((data, index)=>{
     const {dataStructure, shortDescription, smallImg} = data
+    
+    if (data.type == "section lable"){
+      const sectionLable = (
+        <div key={index} className="group w-5/6 max-w-72 aspect-square grid place-content-center text-center bg-gray-800 hover:bg-slate-700 sm:w-2/5 sm:max-w-full learningCardBreakpoint:w-64 learningCardBreakpoint:h-64 m-3 p-2 overflow-hidden transition-colors">
+          <h2 className="w-full text-white text-4xl">{data.lable}</h2>
+          
+          <div className="w-full flex justify-center">
+            <svg width="45" height="45" fill="white" className="group-hover:scale-110 transition-transform" viewBox="0 0 16 16">
+              <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+            </svg>
+          </div>
 
+
+        </div>
+      )
+
+
+      learningCards.push(sectionLable)
+    }else{
 
     const generatedCard = (
       <div key={index} onClick={()=>{openDSACard(index)}} 
-      className=" w-5/6 max-w-72 aspect-square  bg-cardbg sm:w-2/5 sm:max-w-full learningCardBreakpoint:w-64 learningCardBreakpoint:h-64 m-3 p-2 overflow-hidden">
+      className="w-5/6 max-w-72 aspect-square group bg-cardbg hover:bg-background sm:w-2/5 sm:max-w-full learningCardBreakpoint:w-64 learningCardBreakpoint:h-64 m-3 p-2 overflow-hidden hover:scale-105 transition-all">
         {/* add check box here */}
-          <h1 className="w-full text-center text-gray-500">{dataStructure}</h1>
-          <h3 className="w-full text-center text-subtext">{shortDescription}</h3> {/* try to keep this less then 10 words*/}
+          <h1 className="w-full text-center text-lg text-gray-500 group-hover:text-sky-600 group-hover:scale transition-colors">{dataStructure}</h1>
+          <h3 className="w-full text-center text-subtext group-hover:text-slate-300 transition-colors">{shortDescription}</h3> {/* try to keep this less then 10 words*/}
           <img src={smallImg} alt={`small image of ${dataStructure}`} />
       </div>
     )
 
     learningCards.push(generatedCard) //push the card to the learningCards variable so it can show up in the html
+    }
   })
 
 
@@ -94,6 +113,7 @@ content
   return (
     <div className="flex flex-col w-full h-full justify-center items-center py-3 relative">
       <div className="grid place-items-center w-full h-full"> 
+        <h2 className="text-subtext font-semibold">I{String.fromCharCode(39)}m creating these as I learn them. If you have any recommendations let me know through my github or LinkedIn*</h2>
         <div className="flex flex-wrap justify-center w-full h-auto">
           {learningCardOpen == false ? learningCards: <GenerateDSA />}
         </div>

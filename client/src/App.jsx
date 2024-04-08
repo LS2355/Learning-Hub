@@ -16,14 +16,6 @@ import {Learning, Practice, Navbar, Sidebar,} from "./modules"
 
   //maybe set up a simple landing page
 
-
-
-
-
-
-
-
-
 //bufferign effect https://uiverse.io/JkHuger/ugly-shrimp-50
 
 // hover effect i liked https://uiverse.io/WhiteNervosa/popular-ladybug-27
