@@ -28,7 +28,8 @@ export default {
         "workingOn": "#facc15",
         "retry": "#EA580C",
         "next": "#93c5fd",
-         "questionPageBG" : "rgba(21, 21, 21)"
+        "questionPageBG" : "rgba(21, 21, 21)",
+        "hover-blue": "#c5ddde"
 
       },
     },

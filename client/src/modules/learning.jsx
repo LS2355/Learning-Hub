@@ -65,7 +65,7 @@ export function Learning (Props) {
 
 
   function GenerateDSA () {
-    const {dataStructure, shortDescription, diagram, breakdown, videos, resources  }= LearningData[currentActiveCard]
+    const {dataStructure, TechnicalDefinition, diagram, breakdown, videos, resources  }= LearningData[currentActiveCard]
    
     return (
     <div className="w-full h-full grid place-items-center">
@@ -77,17 +77,14 @@ export function Learning (Props) {
       </div>
 
       <h1 className="pb-10 text-5xl text-white">{dataStructure}</h1>   
-      <h2 className="mt-4 mb-10 text-lg text-subtext text-center">{shortDescription}</h2>   
-      <img src={diagram} className="mb-16" alt={`diagram of ${dataStructure}`}  />
-      <p className="text-center text-md text-subtext px-8">{breakdown}</p>
+      <h2 className="mt-4 mb-10 text-xl  text-subtext font-semibold text-center lg:w-5/6 w-full hover:text-hover-blue transition-colors ease-in duration-500">{TechnicalDefinition}</h2>   
+      <img src={diagram} className="w-11/12 my-24 md:w-4/5" alt={`diagram of ${dataStructure}`}  />
+      <p className="text-center text-lg text-subtext px-8 hover:text-hover-blue transition-colors ease-in duration-300 scale-105">{breakdown}</p>
       <h1 className="text-white text-2xl text-center mt-20 mb-12">CHECK OUT</h1> 
       <div className="w-5/6 flex flex-col lg:flex-row ">
          <iframe  className="w-full lg:w-1/3 mb-8 lg:mx-4" src={videos[0].video} frameBorder="0" allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-store" allowFullScreen title="Youtube video player"></iframe> 
          <iframe  className="w-full lg:w-1/3 mb-8 lg:mx-4" src={videos[1].video} frameBorder="0" allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-store" allowFullScreen title="Youtube video player"></iframe> 
          <iframe  className="w-full lg:w-1/3 mb-8 lg:mx-4" src={videos[2].video} frameBorder="0" allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-store" allowFullScreen title="Youtube video player"></iframe>
-
-
-
       </div>
       <div className="text-left w-5/6">
         <h2 className="text-xl text-white">Resources</h2>
