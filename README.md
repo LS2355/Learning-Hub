@@ -37,4 +37,4 @@ what is does:
 The home page you
 
 Features
-<h1>a check</h1>
+<h1 style="color:red">a check</h1>
