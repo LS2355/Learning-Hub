@@ -22,7 +22,8 @@ datastructures and algorithms.
 <h2>Practice Page</h2>
   <p>The practice Page is practicaly a large table that is connected to the leetcode GraphQl api where you can and your completion/progress.</p>
   <p>This is just mostly to keep track of the work that you have done</p>
-![Screenshot 2024-04-17 142428](https://github.com/LS2355/Learning-Hub/assets/108366585/24fa1672-9ac2-4123-ac1f-c1f1f516659f)
+![screenshot](readme-practice-page-img.png)
+
 
 
 
