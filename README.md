@@ -35,3 +35,6 @@ datastructures and algorithms.
 
 what is does: 
 The home page you
+
+Features
+<h1>a check</h1>
