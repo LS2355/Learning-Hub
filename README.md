@@ -24,3 +24,14 @@ icons:
 hover- white
 offhover- #4D4D4D
 
+
+
+
+
+
+Purpose:
+The project was created to help others including myself learn 
+datastructures and algorithms. 
+
+what is does: 
+The home page you
