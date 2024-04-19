@@ -35,6 +35,18 @@ datastructures and algorithms.
   <p>These questions are some that I thought people might have, as well as others that have been asked of me.</p>
     <p>if you have anything you would like to ask please feel free to reach out in the issues or through my linkedIn</p>
 
+<h1>installation and running</h1>
+  <ol>
+    <li>download Zip or clone</li>
+    <li>cd into server folder</li>
+    <li>install dependancies</li>
+    <li>run server (npm start)</li>
+    <li>cd back </li>
+    <li>cd into client</li>
+    <li>install dependencies</li>
+    <li>run client side (nom run dev)</li>
+  </ol>
+
 
 Tech Stack:
 <ul>
