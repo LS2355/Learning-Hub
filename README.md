@@ -5,15 +5,13 @@ datastructures and algorithms.
 <h1>Features</h1>
   <p>the features will be discribed in the following order</p>
   
-  <h3>Home page</h3>
   <h3>Learning page</h3>
   <h3>Practice Page</h3>
   <h4>customization Page (going to add this when I have the time)</h4>
   <h3>questions box</h3>
 
-
-<h2>Home Page</h2>
-  <p>The home page is just a greeting as well as two options create acount/sign in or use demo (only save your data in local storage) this is mostly just for recruters</p>
+** why no create account/login option? **
+<p>simply put I dont want the responsibility of holding someones data for a site that i'm not going to be constantly monitoring. If enough people would like that option, I might add it but for now all user data is saved in your local storage (so don't clear it)</p>
 
 <h2>Learning Page</h2>
   <p>The Learning page is where you can begin to learn about data structures and algorithms. There will be multiple subjects that you can select to learn about.</p>
@@ -34,6 +32,18 @@ datastructures and algorithms.
   <p>The Questions box will populate diffrently depending on what page that you are on.</p>
   <p>These questions are some that I thought people might have, as well as others that have been asked of me.</p>
     <p>if you have anything you would like to ask please feel free to reach out in the issues or through my linkedIn</p>
+
+<h1>installation and running</h1>
+  <ol>
+    <li>download Zip or clone</li>
+    <li>cd into server folder</li>
+    <li>install dependancies</li>
+    <li>run server (npm start)</li>
+    <li>cd back </li>
+    <li>cd into client</li>
+    <li>install dependencies</li>
+    <li>run client side (nom run dev)</li>
+  </ol>
 
 
 Tech Stack:
