@@ -1,0 +1,612 @@
+
+const LearningData = [
+  { 
+    type: "section lable",
+    lable: "Data-Structures" 
+  },
+  {
+    dataStructure: "Array",
+    shortDescription: "An array is a data structure that stores a collection of elements, accessed by index, allowing for efficient random access. It's commonly used for organizing and manipulating lists of data in computer programs.",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/array.svg",
+    breakdown: "An array is a fundamental data structure used in computer programming to store a collection of elements. Think of it as a container that can hold multiple items of the same type, such as numbers, characters, or objects.",
+    pros:[
+      {pro:"Efficient Random Access: Arrays provide constant-time access to individual elements based on their index. This makes accessing elements by their position very fast and efficient."},      
+      {pro:"Compact Storage: Elements in an array are stored in contiguous memory locations, which results in efficient memory usage. This compact storage reduces memory overhead compared to some other data structures."},      
+      {pro:"Cache Friendliness: Accessing contiguous memory locations tends to be cache-friendly, as modern computer architectures often prefetch data into cache lines. This can lead to improved performance when iterating over array elements."},      
+      {pro:"Simple and Easy to Use: Arrays are straightforward data structures, and most programming languages provide built-in support for them. They are easy to understand and manipulate, making them suitable for a wide range of applications."},           
+      {pro:"Predictable Performance: Due to their fixed-size nature and constant-time access, arrays offer predictable performance characteristics. This makes them suitable for scenarios where performance is critical and needs to be tightly controlled."}
+    ],
+    cons:[
+      {con:"Fixed Size: Static arrays have a fixed size, meaning they cannot grow or shrink dynamically after creation. This limitation can lead to wasted memory if the array size is too large or insufficient space if it's too small."},
+      {con:"Inefficient Insertions and Deletions: Inserting or deleting elements in the middle of an array, especially for static arrays, can be inefficient. It may require shifting elements to accommodate the change, resulting in potentially costly operations."},
+      {con:"Homogeneous Elements: Arrays typically store elements of the same data type. While this can provide efficiency in memory usage and access, it limits their flexibility compared to data structures that can store heterogeneous elements."},
+      {con:"Memory Fragmentation: In languages with manual memory management, such as C or C++, arrays can contribute to memory fragmentation if they are allocated and deallocated frequently. This can lead to inefficient memory usage over time."},
+      {con:"Lack of Dynamic Resizing (for Static Arrays): Static arrays have a fixed size determined at compile time. If the number of elements exceeds the array's capacity, it may lead to buffer overflow errors or require manual resizing, which can be cumbersome and error-prone."}
+    ],
+    components:[
+      {component: "elements: These are the actual items stored in the array. They could be integers, floating-point numbers, characters, strings, or even more complex data types like objects or other arrays."},
+      {component: "Container: This is what holds our elements"},
+      {component: "index: Each element in the array has an index, which is like the label. The index helps us identify the position of an element in the array. Importantly, array indices usually start from 0 in many programming languages, so the first element is at index 0, the second element at index 1, and so forth"},
+      {component: "Fixed Size: In many languages, arrays have a fixed size, meaning you have to specify the number of elements it can hold when you create it. Once created, the size of the array typically cannot be changed."}
+    ],
+    types:[
+      {type:"One-Dimensional Array: This is the most basic type of array where elements are stored in a single row or column. Each element has a unique index, and access to elements is straightforward using these indices. One-dimensional arrays are often used for simple lists or sequences of data."},
+      {type:"Multi-Dimensional Array: These arrays store elements in multiple rows and columns, forming a grid-like structure. Multi-dimensional arrays can have two or more dimensions, such as 2D arrays, 3D arrays, and so on. They are commonly used to represent matrices, tables, images, or any data with multiple dimensions."},
+      {type:"Dynamic Array: A dynamic array is a resizable array data structure that automatically adjusts its size as elements are added or removed. It combines the benefits of arrays (constant-time access) with the flexibility of dynamic resizing. Languages like Python provide built-in support for dynamic arrays through data structures like lists."},
+      {type:"Sparse Array: Sparse arrays are designed to efficiently store arrays with a large number of elements, most of which have a default value (often zero or null). Instead of storing all elements, sparse arrays only store non-default values along with their indices. This saves memory and can improve performance for certain types of data."},
+      {type:"Jagged Array: In a jagged array (also known as an array of arrays), each element of the main array can be another array of different sizes. This allows for irregular or ragged data structures where each row (or sub-array) can have a different length. Jagged arrays are useful for representing data sets with varying lengths or dimensions."},
+      {type:"Parallel Array: A parallel array consists of multiple arrays that have the same length, with each array containing data related to the corresponding element in another array. Parallel arrays are often used to represent multiple attributes or properties of a set of objects."},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/oigfaZ5ApsM?si=BNEcmFzGpiAf0fu4"},
+      {video: "https://www.youtube.com/embed/6a39OjkCN5I?si=57TF9VgfIbSmdH4W"},
+    ]
+  },
+  {
+    dataStructure: "Linked List",
+    shortDescription: "A linked list is a dynamic linear data structure comprising nodes, each containing data and a reference to the next node.",
+    smallImg: "./src/resources/linked-list-small.svg",
+    diagram: "./src/resources/linked_list_diagram.svg",
+    breakdown: "A linked list is a fundamental data structure in computer science, often used for storing and managing collections of data. Unlike arrays, which store elements in contiguous memory locations, linked lists organize elements as individual nodes, where each node contains a piece of data and a reference or pointer to the next node in the sequence.",
+    pros:[
+      {pro:"Dynamic Size: Linked lists can dynamically grow and shrink in size as elements are added or removed, without requiring resizing like arrays."},
+      {pro:"Efficient Insertions and Deletions: Inserting or deleting elements from a linked list typically requires only updating a few pointers, making these operations more efficient compared to arrays."},
+      {pro:"Memory Efficiency: Linked lists only allocate memory for each node as needed, reducing wasted memory compared to arrays, which may require pre-allocation of a fixed size."},      
+      ],
+    cons:[
+      {con:"Lack of Random Access: Unlike arrays, linked lists do not provide constant-time access to arbitrary elements. Accessing an element in a linked list requires traversing the list from the head, which can be inefficient for large lists."},
+      {con:"Extra Memory Overhead: Linked lists require additional memory to store pointers, which can increase memory overhead compared to arrays, especially for small elements."},
+      {con:"Cache Performance: Linked lists may not utilize hardware cache as effectively as arrays, leading to potentially slower performance in some scenarios."}
+    ],
+    components:[
+      {component:"Node: Each element in a linked list is represented by a node. A node typically contains two parts: the data it holds and a reference (or pointer) to the next node in the sequence."},
+      {component:"Head: The starting point of a linked list is called the head. It points to the first node in the list."},   
+      {component:"Tail: The end of the linked list where the last node points to null, indicating the end of the list."},   
+    ],
+    types:[
+      {type:"Singly Linked List: In a singly linked list, each node points to the next node in the sequence. Traversal of the list is typically done in one direction, from the head to the tail."},
+      {type:"Doubly Linked List: In a doubly linked list, each node has two pointers: one pointing to the next node and another pointing to the previous node. This allows traversal in both forward and backward directions."},
+      {type:"Circular Linked List: In a circular linked list, the last node points back to the first node, forming a circular structure."}
+    ],
+    overview:" linked lists are versatile data structures that excel in scenarios where dynamic size and efficient insertions and deletions are crucial, while being less suitable for applications requiring frequent random access to elements.",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {
+        video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"
+      },
+      {
+        video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"
+      },
+      {
+        video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"
+      }
+    ]
+  },
+
+  {
+    dataStructure: "Set",
+    shortDescription: "A set is a collection of distinct elements where each element occurs only once within the set, commonly used in computer science and mathematics for efficient storage and manipulation of unique values.",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/set.svg",
+    breakdown: "A set data structure is a collection of distinct elements, where each element occurs only once within the set. It's commonly used in computer science and programming to store unique values and perform operations like membership testing, intersection, union, and difference.",
+    pros:[
+      {pro:"Unique Elements: Sets ensure that each element is unique, making them ideal for situations where you need to work with distinct values only."},
+      {pro:"Fast lookup: Sets typically provide fast lookup operations. Checking whether an element is present in a set or not can be done in constant time, making sets efficient for membership testing."},
+      {pro:"No Order Dependency: Sets do not maintain the order of elements, which can be advantageous in scenarios where the order of elements is not important, or where you want to ignore duplicates without considering their order."},
+      {pro:"Dynamic Size: Sets can dynamically grow or shrink as elements are added or removed, providing flexibility in managing collections of data."},      
+      ],
+    cons:[
+      {con:"Lack of Indexing: Sets do not support indexing or positional access to elements like arrays or lists. If you need to access elements by index, sets might not be the appropriate choice."},
+      {con:"Mutable Elements: In some programming languages, the elements of a set must be immutable or have a stable hash value. This restriction can limit the types of elements that can be stored in a set."},
+      {con:"Limited Operations: While sets support fundamental set operations like union, intersection, and difference, they may not offer operations commonly found in other data structures, such as sorting or random access."}
+    ],
+    components:[
+      {component:"Elements: The individual items or values contained within the set. Each element in a set is unique, meaning it occurs only once within the set. Sets can contain elements of any data type, depending on the programming language or implementation."},
+      {component:"Size: The number of elements in the set. The size of a set can vary dynamically as elements are added or removed."},
+      {component:"Operations: Sets support various operations for manipulating and interacting with the elements. Common set operations include: Adding elements,Removing elements, Checking for the presence of elements (membership testing), Performing mathematical operations (like union, intersection, difference, and symmetric difference)"}
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/mzlIYyY6he4?si=QuGyQbgunw94HbnU"},
+      {video: "https://www.youtube.com/embed/r3R3h5ly_8g?si=MFssL1j7KTkzWjSL"},
+      {video: "https://www.youtube.com/embed/mCWi6d-i8p0?si=aFWTLQW22y6oaG2r"},
+    ]
+  },
+  {
+    dataStructure: "Hash Table",
+    shortDescription: "A hash table is a data structure that stores key-value pairs, allowing efficient retrieval of values based on their associated keys.",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/hash-table.svg",
+    breakdown: "A hash table is a data structure that stores key-value pairs, allowing efficient retrieval of values based on their associated keys.",
+    pros:[
+      {pro:"Fast Retrieval: Hash tables provide fast retrieval of values based on keys, typically with constant-time complexity on average, making them ideal for applications requiring efficient data lookup."},
+      {pro:"Flexible Key Types: Hash tables can accommodate a wide range of key types, including integers, strings, objects, and more."},
+      {pro:"Dynamic Size: Hash tables can dynamically resize themselves as needed, accommodating changes in the number of stored key-value pairs while maintaining efficient performance."}
+      ],
+    cons:[
+      {con:"Hash Collisions: Hash collisions occur when two different keys hash to the same index, which can degrade the performance of hash table operations. Resolving collisions adds complexity to hash table implementations."},
+      {con:"Memory Overhead: Hash tables may have higher memory overhead compared to other data structures due to potential unused space in the underlying array and additional storage for pointers in chaining-based implementations."},
+      {con:"Not Ordered: Hash tables do not maintain any inherent order among the stored key-value pairs. If ordered traversal or iteration is required, additional mechanisms may be needed."}
+    ],
+    components:[
+      {component:"Key: A unique identifier used to access the associated value in the hash table"},
+      {component:"Value: The data associated with a key in the hash table."},
+      {component:"Hash Function: A function that takes a key as input and computes a hash code or hash value, which is used to determine the index or position where the key-value pair should be stored in the hash table."},
+      {component:"Array or Bucket Array: The underlying array or array of linked lists where the key-value pairs are stored. Each element in the array is often referred to as a (bucket)."}
+    ],
+    types:[
+      {type:"Open Addressing: In open addressing, if a hash collision occurs (i.e., two keys hash to the same index), the hash table probes or searches for an alternative location to store the key-value pair. Common techniques include linear probing, quadratic probing, and double hashing."},
+      {type:"Chaining: In chaining, each bucket in the hash table contains a linked list of key-value pairs that hash to the same index. If a collision occurs, the new key-value pair is appended to the linked list at the corresponding bucket."}
+    ],
+    overview:"Hash tables are widely used in various applications due to their efficiency in data retrieval, but they require careful consideration of hash function design, collision resolution strategies, and memory usage to ensure optimal performance.",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/sfWyugl4JWA?si=57puLmsADoVSTwNB"},
+      {video: "https://www.youtube.com/embed/shs0KM3wKv8?si=cPDeBPbnIlW-NjAl"},
+    ]
+  },
+  {
+    dataStructure: "Stack",
+    shortDescription: "A stack data structure is a Last-In-First-Out (LIFO) collection of elements where items are added and removed from the top only. It operates like a stack of plates, allowing efficient insertion and removal of elements, with access restricted to the topmost item.",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/stack.svg",
+    breakdown: "A stack data structure is a collection of elements that follows the Last-In-First-Out (LIFO) principle, meaning that the last element added to the stack is the first one to be removed. It operates like a stack of plates, where you can only add or remove plates from the top",
+    pros:[
+      {pro:"Simple Structure: Stacks have a simple and intuitive structure, making them easy to understand and implement"},      
+      {pro:"Fast Operations: Push and pop operations on a stack typically have constant-time complexity, making them efficient for managing data in Last-In-First-Out (LIFO) order"},
+      {pro:"Memory Management: Stack memory is automatically managed by the system, making it suitable for managing function calls and local variables in programming languages."}
+      ],
+    cons:[
+      {con:"Limited Access: Stacks offer restricted access to elements. Only the top element of the stack can be accessed or removed, and there's no direct access to other elements"},
+      {con:"Fixed Size (for Array-based Stacks): Array-based stacks may have a fixed size, leading to potential overflow errors if the stack becomes full"}
+    ],
+    components:[
+      {component:"Elements: The individual items or values stored in the stack"},
+      {component:"Top: The topmost element of the stack, which is the most recently added element."},
+      {component:"Bottom: The bottom of the stack, which is the least recently added element. It's opposite to the top."},
+      {component:"Push Operation: Adding an element to the top of the stack."},
+      {component:"Pop Operation: Removing the top element from the stack."}
+    ],
+    types:[
+      {type:"Array-based Stack: Implementing a stack using an array data structure, where elements are stored in contiguous memory locations."},
+      {type:"Linked List-based Stack: Implementing a stack using a linked list data structure, where each element contains a reference to the next element in the stack."}
+    ],
+    overview:"Stacks are versatile data structures with various applications in computer science and software engineering. Understanding their properties and usage can be beneficial for solving a wide range of problems efficiently.",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/F1F2imiOJfk?si=R2OBniFO95KN_0fm"},
+    ]
+  },
+  {
+    dataStructure: "Queue",
+    shortDescription: "A queue is like a line where the first person to join is the first to leave.",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/queue.svg",
+    breakdown: "A queue data structure is a collection of elements that follows the First-In-First-Out (FIFO) principle, meaning that the first element added to the queue is the first one to be removed. It operates like a queue of people waiting in line, where the person who joins the line first is the first one to be served.",
+    pros:[
+      {pro:"FIFO Ordering: Queues follow the First-In-First-Out (FIFO) principle, ensuring that the first element enqueued is the first one to be dequeued, making them suitable for scenarios where order preservation is important."},      
+      {pro:"Efficient Insertion and Removal: Enqueue and dequeue operations in a queue typically have constant-time complexity or amortized constant time, making queues efficient for managing data in FIFO order."},
+      {pro:"Flexible Size: Queues can dynamically resize themselves as needed, accommodating changes in the number of stored elements while maintaining efficient performance."}
+      ],
+    cons:[
+      {con:"Limited Access: Queues offer restricted access to elements. Only the front element of the queue can be dequeued, and there's no direct access to other elements."},
+      {con:"No Priority: Standard queues do not consider the priority of elements, which may be a limitation in scenarios where prioritization is required."}
+    ],
+    components:[
+      {component:"Elements: The individual items or values stored in the queue."},
+      {component:"Front: The front or head of the queue, which is the position where elements are removed (dequeued)."},
+      {component:"Rear: The rear or tail of the queue, which is the position where elements are added (enqueued)."},
+      {component:"Enqueue Operation: Adding an element to the rear of the queue"},
+      {component:"Dequeue: Removing the element at the front of the queue"}
+    ],
+    types:[
+      {type:"Linear Queue: A simple queue where elements are stored in a linear order. When the rear of the queue reaches the end of the underlying data structure, such as an array, elements can wrap around to the beginning."},
+      {type:"Circular Queue: A queue where the rear can wrap around to the front, allowing efficient use of space and avoiding the need for elements to be shifted when dequeuing."},
+      {type:"Priority Queue: A queue where elements have associated priority values, and elements with higher priority are dequeued before those with lower priority."}
+    ],
+    overview:"Queues are versatile data structures with various applications in computer science, software engineering, and other fields. Understanding their properties and usage can be beneficial for solving a wide range of problems efficiently.",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/1j2gWyY5CK4?si=Iz83wX2zkM5hsos3"},
+    ]
+  },
+  {
+    dataStructure: "Trees",
+    shortDescription: "A tree data structure is a hierarchical collection of nodes, with each node having a value and zero or more child nodes, organized in a branching structure.",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/trees.svg",
+    breakdown: "A tree data structure is a hierarchical collection of nodes where each node has a value and may have zero or more child nodes, forming a branching structure. Trees are used to represent hierarchical relationships and are commonly employed in computer science and data storage.",
+    pros:[
+      {pro:"Hierarchical Representation: Trees allow for the representation of hierarchical relationships, making them suitable for modeling hierarchical data such as file systems, organizational charts, and family trees."},      
+      {pro:"Efficient Searching: Trees can facilitate efficient searching and retrieval operations, particularly in binary search trees (BSTs), which maintain the property that elements in the left subtree are less than the root, and elements in the right subtree are greater than the root."},
+      {pro:"Balanced Trees: Balanced trees, such as AVL trees and Red-Black trees, offer efficient insertion, deletion, and searching operations with guaranteed logarithmic time complexity, ensuring optimal performance in various applications."}
+      ],
+    cons:[
+      {con:"Complexity: Implementing and managing trees can be complex, especially for balanced trees and advanced tree structures."},
+      {con:"Memory Overhead: Trees may have higher memory overhead compared to simpler data structures, especially for balanced trees that require additional metadata to maintain balance."}
+    ],
+    components:[
+      {component:"Node: Each element in a tree is called a node and consists of a value and references to its child nodes (if any)."},
+      {component:"Root: The topmost node of the tree, serving as the entry point for accessing other nodes."},
+      {component:"Parent: A node that has child nodes."},
+      {component:"Child: Nodes directly connected to another node when moving away from the root."},
+      {component:"Leaf: Nodes that do not have any children, located at the ends of branches."},
+      {component:"Height: The length of the longest path from the root node to a leaf node, representing the depth of the tree."}
+    ],
+    types:[
+      {type:"Binary Tree: A tree in which each node has at most two children, commonly used for representing expressions, binary search trees, and hierarchical structures."},
+      {type:"Binary Search Tree (BST): A binary tree that satisfies the property that elements in the left subtree are less than the root, and elements in the right subtree are greater than the root, facilitating efficient searching and retrieval."},
+      {type:"AVL Tree: A self-balancing binary search tree where the heights of the two child subtrees of any node differ by at most one, ensuring logarithmic time complexity for insertion, deletion, and searching operations"},
+      {type:"Red-Black Tree: Another type of self-balancing binary search tree that guarantees logarithmic time complexity for insertion, deletion, and searching operations, with additional constraints on node coloring and rotations"},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "GeeksForGeeks",
+        link: "https://www.geeksforgeeks.org/tree-data-structure/videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/oSWTXtMglKE?si=YdRZThEyB5OCey6Y"},
+      {video: "https://www.youtube.com/embed/GzJoqJO1zdI?si=K7_BPnHs1v1kPu92"},
+      {video: "https://www.youtube.com/embed/pYT9F8_LFTM?si=JesEY1rfZyG4VY55"},
+    ]
+  },
+  {
+    dataStructure: "Graphs",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "Understanding graphs is something i havn't gotten to yet so i dont want to add anything wrong. I'm gonna hold off on this one till im done pushing out this project",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:"Elements: The individual items or values stored in the stack"},
+      {component:"Top: The topmost element of the stack, which is the most recently added element."},
+      {component:"Bottom: The bottom of the stack, which is the least recently added element. It's opposite to the top."},
+      {component:"Operations: Stack supports two primary operations:<br />Push: Adding an element to the top of the stack.<br />Pop:Removing the top element from the stack"}
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  
+  { 
+    type: "section lable",
+    lable: "Algorithms" 
+  },
+  {
+    dataStructure: "Array",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "Array",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "Array",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "Array",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    type:"section lable",
+    lable:"Sorting"
+  },
+  {
+    type:"section lable",
+    lable:"extra"
+  },
+  {
+    dataStructure: "Node",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  }
+  
+]
+
+
+export default LearningData

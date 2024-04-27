@@ -1,4 +1,4 @@
-import LearningData from "../data/temp-data";
+import LearningData from "../data/learning-data";
 import { useState } from "react";
 import { QuestionsPage } from "./QuestionsPage";
 
@@ -26,7 +26,7 @@ export function Learning (Props) {
 
     
   LearningData.forEach((data, index)=>{
-    const {dataStructure, shortDescription, smallImg} = data
+    const {dataStructure, shortDescription} = data
     
     if (data.type == "section lable"){
       const sectionLable = (
@@ -38,25 +38,19 @@ export function Learning (Props) {
               <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
             </svg>
           </div>
-
-
         </div>
       )
-
-
       learningCards.push(sectionLable)
-    }else{
-
+    }
+    else{
     const generatedCard = (
       <div key={index} onClick={()=>{openDSACard(index)}} 
       className="w-5/6 max-w-72 aspect-square group bg-cardbg hover:bg-background sm:w-2/5 sm:max-w-full learningCardBreakpoint:w-64 learningCardBreakpoint:h-64 m-3 p-2 overflow-hidden hover:scale-105 transition-all">
         {/* add check box here */}
           <h1 className="w-full text-center text-lg text-gray-500 group-hover:text-sky-600 group-hover:scale transition-colors">{dataStructure}</h1>
-          <h3 className="w-full text-center text-subtext group-hover:text-slate-300 transition-colors">{shortDescription}</h3> {/* try to keep this less then 10 words*/}
-          <img src={smallImg} alt={`small image of ${dataStructure}`} />
+          <h3 className="w-full text-center text-subtext group-hover:text-slate-300 transition-colors mt-6">{shortDescription}</h3> {/* try to keep this less then 10 words*/}
       </div>
     )
-
     learningCards.push(generatedCard) //push the card to the learningCards variable so it can show up in the html
     }
   })
@@ -64,30 +58,92 @@ export function Learning (Props) {
 
 
 
+//componets for GenerateDSA
+  //this will build the elements for the arrays passed
+  function MakeArrayIntoElements (arr, dataStructure){
+    const objKey = (Object.keys(arr[0]))[0];
+    console.log("objKey", objKey)
+    console.log("arr", arr)
+
+    const Arrdata = arr.map((arrObj, indx)=>{
+      if (objKey == "pro" || objKey == "con" || objKey == "component" || objKey == "type") return <li key={indx} className="w-4/6 my-1">{arrObj[objKey]}</li>
+      if (objKey == "video") return <iframe  className="w-full lg:w-1/3 mb-8 lg:mx-4" src={arrObj[objKey]} frameBorder="0" allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-store" allowFullScreen title="Youtube video player"></iframe> 
+      return <p key={indx}>{arrObj[objKey]}</p>
+    })
+  
+
+    switch (objKey) {
+      case "pro":
+      case "con":
+        return(
+          <div className="w-full lg:w-1/2 h-full py-2 px-1 flex flex-wrap justify-center my-10 group">
+            <h2 className="w-full text-center text-subtext text-3xl mb-1 h-[60px] group-hover:text-hover-blue transition-colors ease-in duration-500">{objKey+"s"}</h2>
+            <ol className="w-full h-full flex flex-wrap justify-center text-white mt-0 list-decimal">
+              {Arrdata}
+            </ol>
+          </div>
+        )
+      case "component":
+        return(
+          <div className="w-4/5 my-5 group mt-8">
+            <h2 className="w-full text-left text-2xl text-subtext group-hover:text-hover-blue transition-colors ease-in duration-500 mb-5">Parts of a {dataStructure}</h2>
+            <ul className="w-full text-white flex flex-wrap justify-center list-disc">
+              {Arrdata}
+            </ul>
+          </div>
+        )
+      case "type":
+        return(
+          <div className="w-4/5 my-5 group mt-12">
+            <h2 className="w-full text-left text-2xl text-subtext group-hover:text-hover-blue transition-colors ease-in duration-500 mb-4">Types</h2>
+            <ul className="w-full text-white flex flex-wrap justify-center list-disc">
+              {Arrdata}
+            </ul>
+          </div>
+        )
+        case "video":
+          return(<>
+            <h1 className="text-white text-2xl text-center my-28 mb-20 w-full">CHECK OUT</h1> <br />
+            <div className="w-5/6 flex flex-col lg:flex-row justify-center ">
+              {Arrdata}
+            </div>
+            </>
+          )
+          
+
+      default:
+        return (
+          <p className="w-4/6"> {Arrdata}</p>
+        )
+    }
+  }
+
+
+
   function GenerateDSA () {
-    const {dataStructure, TechnicalDefinition, diagram, breakdown, videos, resources  }= LearningData[currentActiveCard]
-   
+    const {dataStructure, diagram, breakdown, pros, cons, components, types, overview, videos, resources}= LearningData[currentActiveCard]
     return (
-    <div className="w-full h-full grid place-items-center">
-     {/* close button */}
-      <div onClick={()=>{closeDSACard()}} className="grid place-items-center top-16 left-4 h-8 w-12 rounded-md sm:rounded-full sm:w-12 sm:h-12 bg-hoveredGrey hover:bg-cardbg absolute sm:left-24 sm:top-4 close-button-container">
+    <div className="w-full h-full flex flex-wrap justify-center">
+      {/* close button */}
+      <div onClick={()=>{closeDSACard()}} className="grid place-items-center top-16 left-4 h-8 w-12 rounded-md sm:rounded-full sm:w-12 sm:h-12 bg-hoveredGrey hover:bg-cardbg sticky sm:left-24 sm:top-4 close-button-container">
         <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" className="close-button" viewBox="0 0 16 16">
           <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
-        </svg>  
+        </svg>
+        {/* start of page */}
       </div>
-
-      <h1 className="pb-10 text-5xl text-white">{dataStructure}</h1>   
-      <h2 className="mt-4 mb-10 text-xl  text-subtext font-semibold text-center lg:w-5/6 w-full hover:text-hover-blue transition-colors ease-in duration-500">{TechnicalDefinition}</h2>   
+      <h1 className="pb-10 text-5xl text-white w-full text-center mt-3">{dataStructure}</h1>   
+      <p className="w-5/6 text-center text-lg text-white px-8 mt-4">{breakdown}</p>
       <img src={diagram} className="w-11/12 my-24 md:w-4/5" alt={`diagram of ${dataStructure}`}  />
-      <p className="text-center text-lg text-subtext px-8 hover:text-hover-blue transition-colors ease-in duration-300 scale-105">{breakdown}</p>
-      <h1 className="text-white text-2xl text-center mt-20 mb-12">CHECK OUT</h1> 
-      <div className="w-5/6 flex flex-col lg:flex-row ">
-         <iframe  className="w-full lg:w-1/3 mb-8 lg:mx-4" src={videos[0].video} frameBorder="0" allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-store" allowFullScreen title="Youtube video player"></iframe> 
-         <iframe  className="w-full lg:w-1/3 mb-8 lg:mx-4" src={videos[1].video} frameBorder="0" allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-store" allowFullScreen title="Youtube video player"></iframe> 
-         <iframe  className="w-full lg:w-1/3 mb-8 lg:mx-4" src={videos[2].video} frameBorder="0" allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-store" allowFullScreen title="Youtube video player"></iframe>
-      </div>
+        {/* will attempt to rended if they exist */}
+      {types? MakeArrayIntoElements(types) : ""}
+      {components? MakeArrayIntoElements(components, dataStructure) : ""}
+      {pros? MakeArrayIntoElements(pros) : ""}
+      {cons? MakeArrayIntoElements(cons) : ""}
+      {overview? <h2 className="w-5/6 text-white text-center text-xl font-bold mt-16">{overview}</h2> : ""}
+      {videos? MakeArrayIntoElements(videos) : ""} 
+
       <div className="text-left w-5/6">
-        <h2 className="text-xl text-white">Resources</h2>
+        <h2 className="text-xl text-white mt-10">Resources</h2>
         <ul className="pl-4 mt-8">
           <li className="m-4 text-gray-500">
             <a href={resources[0].link}>{resources[0].title}</a>
@@ -100,17 +156,18 @@ export function Learning (Props) {
     )
   }
 
-{/*<div className="w-5/6 h-4/6 grid place-items-center">
-diagram
-</div>
-<div className="w-5/6 h-2/6 bg-violet-500">
-content
-</div> */}
+
+
+
+
+
+
+
 
   return (
     <div className="flex flex-col w-full h-full justify-center items-center py-3 relative">
       <div className="grid place-items-center w-full h-full"> 
-        <h2 className="text-subtext font-semibold">I{String.fromCharCode(39)}m creating these as I learn them. If you have any recommendations let me know through my github or LinkedIn*</h2>
+        <h2 className="text-subtext font-semibold text-center">I{String.fromCharCode(39)}m creating these as I learn them. If you have any recommendations let me know through my github or LinkedIn*</h2>
         <div className="flex flex-wrap justify-center w-full h-auto">
           {learningCardOpen == false ? learningCards: <GenerateDSA />}
         </div>
