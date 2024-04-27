@@ -8,7 +8,7 @@ export function Navbar () {
 
 
   return (
-    <nav className="flex justify-between w-screen bg-navbar sticky top-0 flex-col xs:flex-row ali items-start xs:items-center sm:hidden">
+    <nav className="flex justify-between w-screen bg-navbar sticky top-0 flex-col xs:flex-row ali items-start xs:items-center sm:hidden z-50">
 
       <Link to="/"  className="text-2xl m-3 no-underline text-white">Learning Hub</Link>
       <div className="absolute top-3 right-2 justify-between flex-col w-9 h-8 flex xs:hidden" onClick={()=>setMenuIsOpen(!menuIsOpen)}>

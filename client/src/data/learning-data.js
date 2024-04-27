@@ -398,7 +398,7 @@ const LearningData = [
     lable: "Algorithms" 
   },
   {
-    dataStructure: "Array",
+    dataStructure: "Binary Search",
     shortDescription: "",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
@@ -438,7 +438,7 @@ const LearningData = [
     ]
   },
   {
-    dataStructure: "Array",
+    dataStructure: "Recursion",
     shortDescription: "",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
@@ -478,7 +478,7 @@ const LearningData = [
     ]
   },
   {
-    dataStructure: "Array",
+    dataStructure: "Sliding Windows",
     shortDescription: "",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
@@ -518,7 +518,7 @@ const LearningData = [
     ]
   },
   {
-    dataStructure: "Array",
+    dataStructure: "Backtracking",
     shortDescription: "",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
@@ -557,16 +557,458 @@ const LearningData = [
       {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
     ]
   },
+  {
+    dataStructure: "Hashing Function",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "Two pointer",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "BFS",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "DFS",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "Greedy",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "Dynamic Programing",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  
   {
     type:"section lable",
     lable:"Sorting"
   },
+  {
+    dataStructure: "Bubble Sort",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "Quick Sort",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "Merge Sort",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  
   {
     type:"section lable",
     lable:"extra"
   },
   {
     dataStructure: "Node",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "Memoization",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "Caching",
+    shortDescription: "",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/",
+    breakdown: "",
+    pros:[
+      {pro:"pro"},      
+      ],
+    cons:[
+      {con:"con"},
+    ],
+    components:[
+      {component:""},
+    ],
+    types:[
+      {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+  {
+    dataStructure: "Big O (time/space complexity)",
     shortDescription: "",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
