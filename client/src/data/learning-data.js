@@ -401,9 +401,9 @@ const LearningData = [
     
     ],
     videos: [
-      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
-      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
-      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/4IZ80K72OXo?si=tiJLouzifeWMEenl"},
+      {video: "https://www.youtube.com/embed/0sQE8zKhad0?si=ELpMDhGSh5pGoDKj"},
+      
     ]
   },
   
@@ -413,23 +413,27 @@ const LearningData = [
   },
   {
     dataStructure: "Binary Search",
-    shortDescription: "",
+    shortDescription: "Binary search is a divide-and-conquer algorithm that efficiently locates a target value within a sorted array or list by repeatedly dividing the search interval in half.",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
-    breakdown: "",
+    breakdown: "Binary search is a divide-and-conquer algorithm used to efficiently locate a target value within a sorted array or list. It works by repeatedly dividing the search interval in half until the target value is found or the search interval is empty. At each step, it compares the target value with the middle element of the current interval and narrows down the search space accordingly.",
     pros:[
-      {pro:"pro"},      
-      ],
+      {pro:"Efficiency: Binary search operates with a time complexity of O(log n), making it highly efficient for searching large sorted datasets."},
+      {pro:"Simplicity: The algorithm is relatively straightforward to implement and understand."},      
+      {pro:"Optimization: Binary search narrows down the search space by half with each iteration, leading to quick convergence to the target value."}  
+    ],
     cons:[
-      {con:"con"},
+      {con:"Requirement of Sorted Data: Binary search requires the data to be sorted beforehand, which can be a limitation if the dataset is frequently modified or if sorting is costly."},
+      {con:"Limited Applicability: It can only be applied to sorted arrays or lists, restricting its usage in scenarios where sorting is not feasible or where the data structure cannot be sorted efficiently."},
+      {con:"Memory Overhead: While the algorithm itself is memory-efficient, it may require additional memory for storing the sorted array or list."},
     ],
     components:[
-      {component:""},
+      {component:"Sorted Array/List: The binary search algorithm requires the data to be sorted beforehand, either in ascending or descending order      "},
+      {component:"Target Value: The value being searched for within the array or list."},
+      {component:"Search Interval: The range of indices within which the target value may be located, which is continuously narrowed down during each iteration."},
+      {component:"Middle Element: The element at the midpoint of the current search interval, used to determine whether the target value lies in the first half or the second half of the interval."}
     ],
-    types:[
-      {type:""},
-    ],
-    overview:"",
+    overview:"Binary search is widely used in various applications such as searching in databases, dictionaries, and sorted arrays in programming languages due to its efficiency and simplicity. However, it's essential to ensure that the data remains sorted and that the overhead of sorting is justified by the frequency and complexity of search operations.    ",
     resources: [
       {
         title: "title",
