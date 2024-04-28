@@ -351,26 +351,40 @@ const LearningData = [
   },
   {
     dataStructure: "Graphs",
-    shortDescription: "",
+    shortDescription: "A graph data structure is a mathematical representation of relationships between objects, comprising nodes (vertices) and edges (connections) that link these nodes.",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
-    breakdown: "Understanding graphs is something i havn't gotten to yet so i dont want to add anything wrong. I'm gonna hold off on this one till im done pushing out this project",
+    breakdown: "A graph data structure is a mathematical abstraction comprising a collection of nodes (vertices) and edges (connections) that link pairs of nodes, enabling the representation and analysis of relationships between entities, with various configurations such as directed, undirected, weighted, or cyclic, facilitating efficient traversal and manipulation to solve computational problems.",
     pros:[
-      {pro:"pro"},      
-      ],
+      {pro:"Flexibility: Graphs can model complex relationships found in real-world scenarios."},
+      {pro:"Versatility: Graphs can represent various types of relationships and structures."},
+      {pro:"Efficiency: Enables efficient traversal and manipulation for solving diverse computational problems."}
+    ],
     cons:[
-      {con:"con"},
+      {con:"Complexity: Managing large graphs can be computationally intensive."},
+      {con:"Memory Usage: Storing large graphs can require significant memory."},
+      {con:"Algorithm Design: Some graph algorithms may be complex to design and implement."}
     ],
     components:[
-      {component:"Elements: The individual items or values stored in the stack"},
-      {component:"Top: The topmost element of the stack, which is the most recently added element."},
-      {component:"Bottom: The bottom of the stack, which is the least recently added element. It's opposite to the top."},
-      {component:"Operations: Stack supports two primary operations:<br />Push: Adding an element to the top of the stack.<br />Pop:Removing the top element from the stack"}
+      {component:"Nodes (Vertices): Represent entities in the graph."},
+      {component:"Edges (Connections): Define relationships between nodes."},
+      {component:"Weights: Optional values assigned to edges, representing costs or distances."},
+      {component:"Adjacency List: A data structure storing the list of adjacent nodes for each node."},
+      {component:"Adjacency Matrix: A matrix representation indicating connections between nodes."},
+      {component:"Degree: The number of edges incident to a node."},
+      {component:"Path: A sequence of nodes connected by edges."},
+      {component:"Cycle: A path that starts and ends at the same node."}
     ],
     types:[
-      {type:""},
+      {type:"Directed Graphs (Digraphs): Edges have a direction, indicating one-way relationships."},
+      {type:"Undirected Graphs: Edges have no direction, representing symmetric relationships."},
+      {type:"Weighted Graphs: Edges have weights, indicating the cost or distance between nodes."},
+      {type:"Cyclic Graphs: Contain cycles, where a sequence of edges leads back to a starting node."},
+      {type:"Acyclic Graphs: Do not contain cycles."},
+      {type:"Sparse Graphs: Have relatively few edges compared to the number of nodes."},
+      {type:"Dense Graphs: Have many edges relative to the number of nodes."},
     ],
-    overview:"",
+    overview:"Graph data structures are fundamental in various fields such as computer science, network analysis, and operations research, providing powerful tools for modeling, analyzing, and solving complex problems.",
     resources: [
       {
         title: "title",
@@ -598,7 +612,7 @@ const LearningData = [
     ]
   },
   {
-    dataStructure: "BFS",
+    dataStructure: "Breadth-First search (BFS)",
     shortDescription: "",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
@@ -638,7 +652,7 @@ const LearningData = [
     ]
   },
   {
-    dataStructure: "DFS",
+    dataStructure: "Depth-First Search (DFS)",
     shortDescription: "",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
