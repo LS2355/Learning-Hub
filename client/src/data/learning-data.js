@@ -353,7 +353,7 @@ const LearningData = [
     dataStructure: "Graphs",
     shortDescription: "A graph data structure is a mathematical representation of relationships between objects, comprising nodes (vertices) and edges (connections) that link these nodes.",
     smallImg: "./src/resources/",
-    diagram: "./src/resources/",
+    diagram: "./src/resources/graph.svg",
     breakdown: "A graph data structure is a mathematical abstraction comprising a collection of nodes (vertices) and edges (connections) that link pairs of nodes, enabling the representation and analysis of relationships between entities, with various configurations such as directed, undirected, weighted, or cyclic, facilitating efficient traversal and manipulation to solve computational problems.",
     pros:[
       {pro:"Flexibility: Graphs can model complex relationships found in real-world scenarios."},
@@ -415,7 +415,7 @@ const LearningData = [
     dataStructure: "Binary Search",
     shortDescription: "Binary search is a divide-and-conquer algorithm that efficiently locates a target value within a sorted array or list by repeatedly dividing the search interval in half.",
     smallImg: "./src/resources/",
-    diagram: "./src/resources/",
+    diagram: "./src/resources/binary-search.svg",
     breakdown: "Binary search is a divide-and-conquer algorithm used to efficiently locate a target value within a sorted array or list. It works by repeatedly dividing the search interval in half until the target value is found or the search interval is empty. At each step, it compares the target value with the middle element of the current interval and narrows down the search space accordingly.",
     pros:[
       {pro:"Efficiency: Binary search operates with a time complexity of O(log n), making it highly efficient for searching large sorted datasets."},
@@ -450,28 +450,44 @@ const LearningData = [
     
     ],
     videos: [
-      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
-      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
-      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/P3YID7liBug?si=JcsPpB2KO3QS4f5z"},
+      {video: "https://www.youtube.com/embed/7lGiPItOVCM?si=EhzaQm358JZrcnHd"},
     ]
   },
   {
     dataStructure: "Recursion",
-    shortDescription: "",
+    shortDescription: "To understand recursion, you must first understand recursion",
     smallImg: "./src/resources/",
-    diagram: "./src/resources/",
-    breakdown: "",
+    diagram: "./src/resources/recursion.svg",
+    breakdown: "A recursive algorithm is one that solves a problem by breaking it down into smaller, simpler instances of the same problem. These smaller instances are then solved recursively until they reach a base case, which is a trivial instance that can be solved directly without further recursion. The solutions to the smaller instances are then combined to obtain the solution to the original problem.",
+    steps:[
+      {step:"Identify the base case(s) - These are the simplest instances of the problem that can be solved directly."},
+      {step:"Define the recursive case(s) - These are the cases where the problem is broken down into smaller subproblems."},
+      {step:"Call the function recursively with the smaller subproblems."},
+      {step:"Combine the solutions of the smaller subproblems to obtain the solution to the original problem."}
+    ],
     pros:[
-      {pro:"pro"},      
+      {pro:"Elegant and intuitive solution for certain types of problems."},      
+      {pro:"Can lead to simpler code compared to iterative solutions"},
+      {pro:"Often closely matches the problem definition, making it easier to understand and implement."}
       ],
     cons:[
-      {con:"con"},
+      {con:"Can lead to stack overflow if not implemented carefully (due to excessive recursion)."},
+      {con:"May be less efficient in terms of memory and performance compared to iterative solutions for certain problems."},
+      {con:"Debugging recursive algorithms can be challenging."}
     ],
     components:[
-      {component:""},
+      {component:"Base case: The terminating condition that stops the recursion. It's the simplest instance of the problem that can be solved directly."},
+      {component:"Recursive case: The part of the algorithm where the function calls itself with smaller instances of the same problem."},
+      {component:"Parameters: The input to the recursive function, which may change with each recursive call."}
     ],
     types:[
-      {type:""},
+      {type:"Linear Recursion: This is the most basic form of recursion, where a function calls itself only once in each recursion step. Linear recursion typically involves reducing the problem size by one in each recursive call until it reaches a base case. The example of calculating factorial that I provided earlier is an example of linear recursion."},
+      {type:"Tail Recursion: In tail recursion, the recursive call is the last thing executed by the function. This means that there's no need to keep track of the intermediate state between recursive calls, allowing some compilers or interpreters to optimize the recursion into an iterative form. Tail recursion is particularly useful in languages that support tail call optimization, as it avoids stack overflow errors for deep recursion. An example of tail recursion is finding the sum of elements in a list:"},
+      {type:"Binary Recursion: In binary recursion, a function makes two recursive calls in each step. This often results in a divide-and-conquer approach, where the problem is divided into two subproblems of roughly equal size. Binary recursion is commonly used in algorithms such as binary search and certain sorting algorithms like quicksort and mergesort."},
+      {type:"Multiple Recursion: In multiple recursion, a function makes more than two recursive calls in each step. This approach is less common but can be useful in certain scenarios, such as tree traversal algorithms."},
+      {type:"Nested Recursion: Nested recursion occurs when a recursive function calls itself with a modified argument that is itself a recursive call. This type of recursion can be harder to understand and analyze but is sometimes necessary for solving certain types of problems efficiently."}
+
     ],
     overview:"",
     resources: [
@@ -496,24 +512,34 @@ const LearningData = [
     ]
   },
   {
-    dataStructure: "Sliding Windows",
-    shortDescription: "",
+    dataStructure: "Sliding Window",
+    shortDescription: "The sliding window algorithm efficiently processes a fixed-size window moving through the input data, solving problems by iteratively updating computations on subsets of the dataset.",
     smallImg: "./src/resources/",
-    diagram: "./src/resources/",
-    breakdown: "",
+    diagram: "./src/resources/sliding-window.svg",
+    breakdown: "The sliding window algorithm is a technique used in computer science to solve problems involving arrays or strings. It operates by maintaining a window of fixed size that moves through the input data, processing a portion of the data at each step. The key idea is to efficiently perform computations on a subset of the input data by iteratively moving the window through the entire dataset.",
+    identify:[
+      {trait:"The problem involves finding a substring, subarray, or subsequence that meets certain criteria within a larger dataset."},
+      {trait:"There's a requirement to efficiently process a fixed-size window that moves through the input data."},
+      {trait:"The solution can be incrementally updated or calculated as the window slides through the dataset."},
+      {trait:"The problem exhibits characteristics like linear time complexity and can be solved iteratively without nested loops."}
+    ],
+    example_snippet:"./src/resources/sliding-window-screenshot.png",
+    steps:[
+      {step:"Initialization: Set up the initial window by defining its starting and ending points."},
+      {step:"Process the Window: Perform operations on the elements within the window."},
+      {step:"Slide the Window: Move the window to the right (or left, depending on the problem) by one element."},
+      {step:"Repeat: Continue steps 2 and 3 until the window reaches the end of the input data."}
+    ],
     pros:[
-      {pro:"pro"},      
+      {pro:"Efficiency: The algorithm typically has a time complexity of O(n), where n is the size of the input data."},      
+      {pro:"Space Efficiency: It usually requires only a constant amount of extra space for storing the window."},
+      {pro:"Simplicity: The algorithm is relatively easy to understand and implement."},
+      {pro:"Optimization: It often allows for optimization by pruning unnecessary computations."}
       ],
     cons:[
-      {con:"con"},
-    ],
-    components:[
-      {component:""},
-    ],
-    types:[
-      {type:""},
-    ],
-    overview:"",
+      {con:"Window Size Selection: Choosing the right window size can be crucial for optimal performance, and determining it may not always be straightforward."},
+      {con:"Limited Applicability: Some problems may have constraints that make them unsuitable for the sliding window approach."}
+    ], 
     resources: [
       {
         title: "title",
@@ -620,18 +646,39 @@ const LearningData = [
     shortDescription: "",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
-    breakdown: "",
+    breakdown: "Breadth-first search (BFS) is a traversal algorithm that explores the datastrucutres (trees & graphs) level by level. Starting from a specified vertex or root node, BFS systematically visits all vertices reachable from that point by visiting the nearest unvisited node first before moving to the nodes farther away.",
+    example_snippet:"./src/resources/",
+    steps:[
+      {step:"Initialize an empty queue and a set or array to track visited vertices."},
+      {step:"Enqueue the starting node/vertex into the queue and mark it as visited."},
+      {
+        step:"Repeat the following steps until the queue is empty:",
+        substep:[
+          {sub:"Dequeue a node/vertex from the queue",},
+          {sub:"Visit the dequeued node/vertex and process it",},
+          {sub:"Enqueue all unvisited adjacent nodes/vertices of the dequeued node/vertex into the queue and mark them as visited"}
+        ]
+      },
+      {step:"When the queue becomes empty, the BFS traversal is complete."}
+    ],
+   
+   
     pros:[
-      {pro:"pro"},      
+      {pro:"Completeness: BFS guarantees to find the shortest path in an unweighted graph.pro"},     
+      {pro:"Optimal solution for shortest path: When searching for the shortest path, BFS finds the optimal solution because it explores nodes level by level."},
+      {pro:"Determines connectivity: BFS can determine whether a graph is connected or not by visiting all reachable vertices."},
+      {pro:"Suitable for finding the shortest path in unweighted graphs and for solving problems that involve traversing all vertices in a graph level by level."},
       ],
     cons:[
-      {con:"con"},
+      {con:"Memory usage: BFS may consume a significant amount of memory, especially for large graphs, as it requires storing all visited vertices in a queue."},
+      {con:"Slower than DFS in some cases: BFS may be slower than depth-first search (DFS) when the solution is located deep in the graph, as it systematically explores all vertices at each level before moving deeper."}
     ],
     components:[
       {component:""},
     ],
     types:[
-      {type:""},
+      {type:"Standard BFS: In the standard BFS, each vertex is visited exactly once, and all adjacent vertices are explored before moving to the next level."},
+      {type:"Bidirectional BFS: Bidirectional BFS is an optimized version of BFS that simultaneously explores vertices from both the source and destination vertices, meeting at a common vertex or intersection point. This approach can significantly reduce the search space and improve efficiency, especially in graphs with a large number of vertices."}
     ],
     overview:"",
     resources: [
@@ -907,23 +954,11 @@ const LearningData = [
   },
   {
     dataStructure: "Node",
-    shortDescription: "",
+    shortDescription: "a node is a fundamental building block of various data structures, particularly linked data structures such as linked lists, trees, graphs, and more.",
     smallImg: "./src/resources/",
-    diagram: "./src/resources/",
-    breakdown: "",
-    pros:[
-      {pro:"pro"},      
-      ],
-    cons:[
-      {con:"con"},
-    ],
-    components:[
-      {component:""},
-    ],
-    types:[
-      {type:""},
-    ],
-    overview:"",
+    diagram: "./src/resources/node.svg",
+    breakdown: "A node is an individual element within a data structure that contains data or information, and optionally one or more references or pointers to other nodes, depending on the type of data structure.",
+
     resources: [
       {
         title: "title",
@@ -939,11 +974,7 @@ const LearningData = [
       }
     
     ],
-    videos: [
-      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
-      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
-      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
-    ]
+
   },
   {
     dataStructure: "Memoization",

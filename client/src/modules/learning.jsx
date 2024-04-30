@@ -66,7 +66,13 @@ export function Learning (Props) {
     console.log("arr", arr)
 
     const Arrdata = arr.map((arrObj, indx)=>{
-      if (objKey == "pro" || objKey == "con" || objKey == "component" || objKey == "type") return <li key={indx} className="w-4/6 my-1">{arrObj[objKey]}</li>
+      if (objKey == "pro" || objKey == "con" || objKey == "component" || objKey == "type" || objKey == "trait" || objKey == "step" || objKey == "sub") return (
+      <li key={indx} className={objKey == "sub"? "w-full my-1" : "w-4/6 my-1"}>
+        {arrObj[objKey]}
+        {arrObj.substep ? MakeArrayIntoElements(arrObj.substep) : ""}
+        </li>
+      )
+
       if (objKey == "video") return <iframe  className="w-full lg:w-1/3 mb-8 lg:mx-4" src={arrObj[objKey]} frameBorder="0" allow="accelerometer; autoplay;clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-store" allowFullScreen title="Youtube video player"></iframe> 
       return <p key={indx}>{arrObj[objKey]}</p>
     })
@@ -78,9 +84,9 @@ export function Learning (Props) {
         return(
           <div className="w-full lg:w-1/2 h-full py-2 px-1 flex flex-wrap justify-center my-10 group">
             <h2 className="w-full text-center text-subtext text-3xl mb-1 h-[60px] group-hover:text-hover-blue transition-colors ease-in duration-500">{objKey+"s"}</h2>
-            <ol className="w-full h-full flex flex-wrap justify-center text-white mt-0 list-decimal">
+            <ul className="w-full h-full flex flex-wrap justify-center text-white mt-0 list-disc">
               {Arrdata}
-            </ol>
+            </ul>
           </div>
         )
       case "component":
@@ -93,14 +99,33 @@ export function Learning (Props) {
           </div>
         )
       case "type":
+      case "step":
         return(
-          <div className="w-4/5 my-5 group mt-12">
-            <h2 className="w-full text-left text-2xl text-subtext group-hover:text-hover-blue transition-colors ease-in duration-500 mb-4">Types</h2>
+          <div className="w-4/5 my-5 mx-auto group mt-12">
+            <h2 className="w-full text-left text-2xl text-subtext group-hover:text-hover-blue transition-colors ease-in duration-500 mb-4 capitalize">{objKey}s</h2>
+            <ul className="w-full text-white flex flex-wrap justify-center list-decimal">
+              {Arrdata}
+            </ul>
+          </div>
+        )
+      case "sub":
+        return(
+          <ul className="list-disc ml-10">
+            {Arrdata}
+          </ul>
+        )
+
+      case "trait":
+        return(
+          <div className="w-4/5 my-5 mx-auto group mt-12">
+            <h2 className="w-full text-left text-2xl text-subtext group-hover:text-hover-blue transition-colors ease-in duration-500 mb-4">How to identify a {dataStructure} problem</h2>
             <ul className="w-full text-white flex flex-wrap justify-center list-disc">
               {Arrdata}
             </ul>
           </div>
         )
+      
+
         case "video":
           return(<>
             <h1 className="text-white text-2xl text-center my-28 mb-20 w-full">CHECK OUT</h1> <br />
@@ -121,7 +146,7 @@ export function Learning (Props) {
 
 
   function GenerateDSA () {
-    const {dataStructure, diagram, breakdown, pros, cons, components, types, overview, videos, resources}= LearningData[currentActiveCard]
+    const {dataStructure, diagram, breakdown, identify, example_snippet, steps, pros, cons, components, types, overview, videos, resources}= LearningData[currentActiveCard]
     return (
     <div className="w-full h-full flex flex-wrap justify-center">
       {/* close button */}
@@ -133,8 +158,20 @@ export function Learning (Props) {
       </div>
       <h1 className="pb-10 text-5xl text-white w-full text-center mt-3">{dataStructure}</h1>   
       <p className="w-5/6 text-center text-lg text-white px-8 mt-4">{breakdown}</p>
-      <img src={diagram} className="w-11/12 my-24 md:w-4/5" alt={`diagram of ${dataStructure}`}  />
+      <img src={diagram} className="w-11/12 max-w-[1200px] my-24 md:w-4/5" alt={`diagram of ${dataStructure}`}  />
         {/* will attempt to rended if they exist */}
+      {identify? MakeArrayIntoElements(identify) : ""}
+      {example_snippet? (
+          <div className="w-full flex justify-center">
+            <div className="w-4/5 max-w-[700px] my-24 rounded-lg overflow-hidden border-navbar border-2 bg-black shadow-md shadow-hover-blue">
+              <div className="w-full h-[28px] px-4 bg-subtext flex justify-start font-semibold text-white relative">
+                <h1 className="absolute bottom-0 left-4 capitalize">problem example</h1>
+              </div>
+              <img src={example_snippet} className="w-full p-2" alt={`example of a ${dataStructure}`}/>
+            </div>
+          </div>
+        ) : ""}
+      {steps? MakeArrayIntoElements(steps) : ""}
       {types? MakeArrayIntoElements(types) : ""}
       {components? MakeArrayIntoElements(components, dataStructure) : ""}
       {pros? MakeArrayIntoElements(pros) : ""}
