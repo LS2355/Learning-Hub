@@ -643,11 +643,11 @@ const LearningData = [
   },
   {
     dataStructure: "Breadth-First search (BFS)",
-    shortDescription: "",
+    shortDescription: "Breadth-first search (BFS) is a graph traversal algorithm that systematically explores nodes level by level",
     smallImg: "./src/resources/",
-    diagram: "./src/resources/",
+    diagram: "./src/resources/BFS.svg",
     breakdown: "Breadth-first search (BFS) is a traversal algorithm that explores the datastrucutres (trees & graphs) level by level. Starting from a specified vertex or root node, BFS systematically visits all vertices reachable from that point by visiting the nearest unvisited node first before moving to the nodes farther away.",
-    example_snippet:"./src/resources/",
+    example_snippet:"./src/resources/BFS-screenshot.png",
     steps:[
       {step:"Initialize an empty queue and a set or array to track visited vertices."},
       {step:"Enqueue the starting node/vertex into the queue and mark it as visited."},
@@ -661,8 +661,6 @@ const LearningData = [
       },
       {step:"When the queue becomes empty, the BFS traversal is complete."}
     ],
-   
-   
     pros:[
       {pro:"Completeness: BFS guarantees to find the shortest path in an unweighted graph.pro"},     
       {pro:"Optimal solution for shortest path: When searching for the shortest path, BFS finds the optimal solution because it explores nodes level by level."},
@@ -704,21 +702,49 @@ const LearningData = [
   },
   {
     dataStructure: "Depth-First Search (DFS)",
-    shortDescription: "",
+    shortDescription: "Depth-First Search (DFS) is a graph traversal algorithm that explores as far as possible along each branch before backtracking.",
     smallImg: "./src/resources/",
-    diagram: "./src/resources/",
-    breakdown: "",
+    diagram: "./src/resources/DFS.svg",
+    breakdown: "Depth-first search (DFS) is traversal algorithm that explores as far as possible along each branch before backtracking. Starting from a specified node/vertex, DFS systematically explores all nodes/vertices reachable from that vertex by recursively visiting adjacent unvisited nodes/vertices.",
+    example_snippet:"./src/resources/DFS-screenshot.png",
+    steps:[
+      {step:"Initialize a set or array to track visited vertices and an empty stack to store vertices to be explored."},
+      {step:"Push the starting vertex onto the stack and mark it as visited."},
+      {
+        step:"Repeat the following steps until the stack is empty:",
+        substep:[
+          {sub:"Pop a vertex from the stack."},
+          {sub:"Visit the popped vertex and process it."},
+          {sub:"For each unvisited adjacent vertex of the popped vertex, push it onto the stack and mark it as visited."},
+        ]
+      },
+      {step:"When the stack becomes empty, the DFS traversal will be complete"}
+    ],
     pros:[
-      {pro:"pro"},      
+      {pro:"Memory efficiency: DFS typically requires less memory compared to breadth-first search (BFS), as it only needs to store information about the current path being explored."},      
+      {pro:"Suitable for problems with multiple solutions: DFS can be useful for finding multiple solutions, as it exhaustively explores all paths in the graph."},
+      {pro:"Detecting cycles: DFS can detect cycles in a graph by checking for back edges during traversal."},
       ],
     cons:[
-      {con:"con"},
+      {con:"Completeness: DFS may not find a solution if the graph contains cycles, as it can get stuck in an infinite loop."},
+      {con:"Non-optimal solution for shortest path: DFS does not guarantee finding the shortest path between two vertices, as it may explore deeper paths before exploring shorter ones."},
+      {con:"Performance: DFS can be slower than BFS for finding the shortest path, especially in graphs with deep paths."},
+      
     ],
     components:[
-      {component:""},
+      {component:"Initialization: Begin by selecting a starting vertex (or node) to start the traversal."},
+      {component:"Visit Vertex: Visit the current vertex and mark it as visited."},
+      {component:"Explore Neighbors: Recursively explore all unvisited neighboring vertices of the current vertex."},
+      {component:"Base Case: Define a base case or termination condition to stop the recursion, such as when all vertices have been visited."},
+      {component:"Backtracking (if needed): In some cases, backtracking may be necessary to explore alternative paths or to undo certain decisions made during the traversal."},
     ],
     types:[
-      {type:""},
+      {type:"Pre-order traversal: In pre-order traversal, the algorithm visits the current node, then recursively traverses the left subtree, followed by the right subtree. This traversal is often used in binary trees to produce a prefix expression of the tree."},
+      {type:"In-order traversal: In in-order traversal, the algorithm recursively traverses the left subtree, visits the current node, and then recursively traverses the right subtree. This traversal is commonly used in binary search trees (BST) to produce a sorted list of elements."},
+      {type:"Post-order traversal: In post-order traversal, the algorithm recursively traverses the left subtree, recursively traverses the right subtree, and then visits the current node. This traversal is useful for tasks like deleting a tree from leaf to root."},
+      {type:"Path tracing: During the DFS traversal, you can maintain a data structure (e.g., an array or list) to trace the path from the starting node to the current node. This path can be used to find specific paths or to analyze the structure of the graph."},
+      {type:"Backtracking: In some scenarios, DFS is used for backtracking to find paths that satisfy certain conditions or constraints. The algorithm explores all possible paths from the starting node and backtracks whenever it encounters a dead end or violation of constraints."},
+      
     ],
     overview:"",
     resources: [
@@ -759,6 +785,61 @@ const LearningData = [
     ],
     types:[
       {type:""},
+    ],
+    overview:"",
+    resources: [
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      },
+      {
+        title: "title",
+        link: "videoLink"
+      }
+    
+    ],
+    videos: [
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+      {video: "https://www.youtube.com/embed/X6AR2RMB5tE?si=dxn6x9uC0HuMM4VJ"},
+    ]
+  },
+   {
+    dataStructure: "Two Pointer",
+    shortDescription: "The two-pointer algorithm is a technique that involves using two pointers to efficiently solve problems by iterating through an array or list and manipulating the pointers based on specific conditions",
+    smallImg: "./src/resources/",
+    diagram: "./src/resources/two-pointer.svg",
+    breakdown: "The two-pointer technique involves using two pointers that traverse through an array or list from different positions or in different directions. These pointers can be adjusted based on certain conditions to solve specific problems efficiently.",
+    example_snippet:"./src/resources/two-pointer-screenshot.png",
+    steps:[
+      {step:"Initialize pointers: Depending on the problem, initialize two pointers at different positions in the array or list."},
+      {step:"Iterate through the array or list: While certain conditions are met, move the pointers accordingly."},
+      {step:"Adjust pointers: Based on the problem's requirements, adjust the pointers' positions to solve the problem efficiently."},
+      {step:"Termination condition: Determine the condition under which the iteration stops."},
+    ],
+    pros:[
+      {pro:"Efficiency: The two-pointer technique can often solve problems with a time complexity of O(n), making it efficient for large datasets."},      
+      {pro:"Space Efficiency: It typically requires only a constant amount of additional space."},
+      {pro:"Simplicity: It's relatively easy to understand and implement."},
+      ],
+    cons:[
+      {con:"Not Suitable for All Problems: While powerful, the two-pointer technique is not applicable to every problem and may not always provide the most optimal solution."},
+      {con:"Limited Applicability: It's primarily useful for problems involving arrays or lists where the order of elements matters."}
+    ],
+    components:[
+      {component:"Setting up the Pointers: Decide where the pointers start in the array or list."},
+      {component:"Moving the Pointers: Decide how the pointers move through the array or list."},
+      {component:"Looping: Keep doing the moving step until a certain condition is met."},
+      {component:"Stopping: Know when to stop moving the pointers based on the problem."},
+      {component:"Solving the Problem: Use the pointers to solve the specific problem you're working on."},
+    ],
+    types:[
+      {type:"Same Direction Pointers: Both pointers move in the same direction, usually from left to right or right to left, to solve problems such as finding pairs that sum up to a target value or removing duplicates from a sorted array."},
+      {type:"Opposite Direction Pointers: One pointer moves from the beginning of the array, while the other moves from the end, typically used for problems like searching for a target element in a sorted array or list."}
     ],
     overview:"",
     resources: [
@@ -829,23 +910,35 @@ const LearningData = [
   },
   {
     dataStructure: "Bubble Sort",
-    shortDescription: "",
+    shortDescription: "Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order until the list is sorted.",
     smallImg: "./src/resources/",
-    diagram: "./src/resources/",
-    breakdown: "",
+    diagram: "./src/resources/bubble-sort.svg",
+    breakdown: "Bubble sort is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items, and swaps them if they are in the wrong order. This process is repeated until no swaps are needed, which indicates that the list is sorted.",
+    
+    example_snippet:"./src/resources/bubble-sort-screenshot.png",
+    steps:[
+      {step:"Start from the beginning of the list."},
+      {step:"Compare the first two elements. If the first element is greater than the second element, swap them."},
+      {step:"Move to the next pair of elements and repeat step 2."},
+      {step:"Continue this process until the end of the list is reached."},
+      {step:"Repeat steps 1-4 until no swaps are needed."},
+    ],
     pros:[
-      {pro:"pro"},      
+      {pro:"Simple implementation: Bubble sort is easy to understand and implement."},   
+      {pro:"Space efficiency: Bubble sort typically requires only a constant amount of additional space, as it operates directly on the input array."},
+      {pro:"Works well for small datasets: It can perform well for small datasets or nearly sorted lists."}  
       ],
     cons:[
-      {con:"con"},
+      {con:"Inefficient for large datasets: Bubble sort has a time complexity of O(n^2), making it highly inefficient for large datasets."},
+      {con:"Poor performance: Its average and worst-case time complexities are not efficient compared to other sorting algorithms like merge sort or quicksort."},
+      {con:"Inefficient for partially sorted lists: Even if a large portion of the list is already sorted, bubble sort still needs to iterate through the entire list."}
     ],
     components:[
-      {component:""},
+      {component:"Input Array: The unsorted array that you want to sort."},
+      {component:"Looping Mechanism: A loop that iterates over the array multiple times until the array is fully sorted. This loop ensures that the sorting process continues until no more swaps are needed."},
+      {component:"Comparison of Adjacent Elements: Within each iteration of the loop, compare adjacent elements of the array. This comparison determines whether a swap is necessary to correct the order of elements."},
+      {component:"Swapping Mechanism: If two adjacent elements are out of order (i.e., the first element is greater than the second element in the case of sorting in ascending order), they need to be swapped to correct the order."},
     ],
-    types:[
-      {type:""},
-    ],
-    overview:"",
     resources: [
       {
         title: "title",

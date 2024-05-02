@@ -161,17 +161,17 @@ export function Learning (Props) {
       <img src={diagram} className="w-11/12 max-w-[1200px] my-24 md:w-4/5" alt={`diagram of ${dataStructure}`}  />
         {/* will attempt to rended if they exist */}
       {identify? MakeArrayIntoElements(identify) : ""}
+      {steps? MakeArrayIntoElements(steps) : ""}
       {example_snippet? (
           <div className="w-full flex justify-center">
-            <div className="w-4/5 max-w-[700px] my-24 rounded-lg overflow-hidden border-navbar border-2 bg-black shadow-md shadow-hover-blue">
+            <div className="w-4/5 max-w-[700px] max-h-[900px] my-24 rounded-lg overflow-hidden border-navbar border-2 bg-black shadow-md shadow-hover-blue">
               <div className="w-full h-[28px] px-4 bg-subtext flex justify-start font-semibold text-white relative">
                 <h1 className="absolute bottom-0 left-4 capitalize">problem example</h1>
               </div>
               <img src={example_snippet} className="w-full p-2" alt={`example of a ${dataStructure}`}/>
             </div>
           </div>
-        ) : ""}
-      {steps? MakeArrayIntoElements(steps) : ""}
+        ) : ""}      
       {types? MakeArrayIntoElements(types) : ""}
       {components? MakeArrayIntoElements(components, dataStructure) : ""}
       {pros? MakeArrayIntoElements(pros) : ""}
