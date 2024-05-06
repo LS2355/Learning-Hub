@@ -25,9 +25,10 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: https://ls2355.github.io/Learning-Hub
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      
       - name: Checkout
         uses: actions/checkout@v4
       - name: Set up Node
@@ -35,10 +36,9 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - name: Move to Client file
-        run: cd ./client
       - name: Install dependencies
         run: npm ci
+        working-directory: ./client
       - name: Build
         run: cd ./client && npm run build
       - name: Setup Pages
