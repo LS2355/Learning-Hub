@@ -1,7 +1,7 @@
 import {useState, useEffect} from "react"
 //componets
 import { QuestionsPage } from "./QuestionsPage"
-import { InputForm } from "./form"
+import { InputForm } from "./Form"
 
 //fake data
 import fakeLeetCodeData from "../data/table-data"
