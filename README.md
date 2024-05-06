@@ -14,13 +14,14 @@ datastructures and algorithms.
 <p>simply put I dont want the responsibility of holding someones data for a site that i'm not going to be constantly monitoring. If enough people would like that option, I might add it but for now all user data is saved in your local storage (so don't clear it)</p>
 
 <h2>Learning Page</h2>
+  <img src="./README_images/Learning-img.png">
   <p>The Learning page is where you can begin to learn about data structures and algorithms. There will be multiple subjects that you can select to learn about.</p>
   <p>the layout is simple it will have a short description, diagram, more in depth description, some video recommandations, and lastly my sources</p>
 
 <h2>Practice Page</h2>
+  <img src="./README_images/Practice-img.png">
   <p>The practice Page is practicaly a large table that is connected to the leetcode GraphQl api where you can and your completion/progress.</p>
   <p>This is just mostly to keep track of the work that you have done</p>
-![ ](client/src/resources/readme-practice-page-img.png)
 
 
 
@@ -48,7 +49,7 @@ datastructures and algorithms.
 
 Tech Stack:
 <ul>
-  <li>HTML, CSS, JS</li>
+  <li style="background:blue; padding:5px 3px; width:100px">HTML, CSS, JS</li>
   <li>React.js</li>
   <li>Vite</li>
   <li>Express.js</li>
@@ -58,5 +59,16 @@ Tech Stack:
   <li>Postcss</li>
   <li>GraphQl</li>
   <li>JSON</li>
+  <li>YAML</li>
+  <li>Rollup.js</li>
 </ul>
+
+
+
+
+look at the rollup documentation so that i can properly configure the webpack. 
+the main issue is that images are not appearing
+also see if i can get the server to run using github actions as well
+
+then run build again
 

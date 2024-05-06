@@ -63,7 +63,7 @@ const LearningData = [
     dataStructure: "Linked List",
     shortDescription: "A linked list is a dynamic linear data structure comprising nodes, each containing data and a reference to the next node.",
     smallImg: "./src/resources/linked-list-small.svg",
-    diagram: "./src/resources/linked_list_diagram.svg",
+    diagram: "./public/linked_list_diagram.svg",
     breakdown: "A linked list is a fundamental data structure in computer science, often used for storing and managing collections of data. Unlike arrays, which store elements in contiguous memory locations, linked lists organize elements as individual nodes, where each node contains a piece of data and a reference or pointer to the next node in the sequence.",
     pros:[
       {pro:"Dynamic Size: Linked lists can dynamically grow and shrink in size as elements are added or removed, without requiring resizing like arrays."},
@@ -904,7 +904,7 @@ const LearningData = [
   },
   {
     dataStructure: "Dynamic Programing",
-    shortDescription: "",
+    shortDescription: "Dynamic programming is a method for solving problems by breaking them into smaller, simpler subproblems and using the solutions to those subproblems to solve the larger problem efficiently.",
     smallImg: "./src/resources/",
     diagram: "./src/resources/",
     breakdown: "Dynamic programming is a problem-solving technique used to solve problems by breaking them down into simpler subproblems and solving each subproblem only once, storing the solutions to subproblems in a table to avoid redundant computations, and then combining these solutions to solve the original problem.",
