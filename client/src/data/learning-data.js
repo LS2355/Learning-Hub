@@ -7,8 +7,7 @@ const LearningData = [
   {
     dataStructure: "Array",
     shortDescription: "An array is a data structure that stores a collection of elements, accessed by index, allowing for efficient random access. It's commonly used for organizing and manipulating lists of data in computer programs.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/array.svg",
+    diagram: "./assets/array.svg",
     breakdown: "An array is a fundamental data structure used in computer programming to store a collection of elements. Think of it as a container that can hold multiple items of the same type, such as numbers, characters, or objects.",
     pros:[
       {pro:"Efficient Random Access: Arrays provide constant-time access to individual elements based on their index. This makes accessing elements by their position very fast and efficient."},      
@@ -62,8 +61,7 @@ const LearningData = [
   {
     dataStructure: "Linked List",
     shortDescription: "A linked list is a dynamic linear data structure comprising nodes, each containing data and a reference to the next node.",
-    smallImg: "./src/resources/linked-list-small.svg",
-    diagram: "./public/linked_list_diagram.svg",
+    diagram: "./assets/linked_list_diagram.svg",
     breakdown: "A linked list is a fundamental data structure in computer science, often used for storing and managing collections of data. Unlike arrays, which store elements in contiguous memory locations, linked lists organize elements as individual nodes, where each node contains a piece of data and a reference or pointer to the next node in the sequence.",
     pros:[
       {pro:"Dynamic Size: Linked lists can dynamically grow and shrink in size as elements are added or removed, without requiring resizing like arrays."},
@@ -117,8 +115,8 @@ const LearningData = [
   {
     dataStructure: "Set",
     shortDescription: "A set is a collection of distinct elements where each element occurs only once within the set, commonly used in computer science and mathematics for efficient storage and manipulation of unique values.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/set.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/set.svg",
     breakdown: "A set data structure is a collection of distinct elements, where each element occurs only once within the set. It's commonly used in computer science and programming to store unique values and perform operations like membership testing, intersection, union, and difference.",
     pros:[
       {pro:"Unique Elements: Sets ensure that each element is unique, making them ideal for situations where you need to work with distinct values only."},
@@ -161,8 +159,8 @@ const LearningData = [
   {
     dataStructure: "Hash Table",
     shortDescription: "A hash table is a data structure that stores key-value pairs, allowing efficient retrieval of values based on their associated keys.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/hash-table.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/hash-table.svg",
     breakdown: "A hash table is a data structure that stores key-value pairs, allowing efficient retrieval of values based on their associated keys.",
     pros:[
       {pro:"Fast Retrieval: Hash tables provide fast retrieval of values based on keys, typically with constant-time complexity on average, making them ideal for applications requiring efficient data lookup."},
@@ -208,8 +206,8 @@ const LearningData = [
   {
     dataStructure: "Stack",
     shortDescription: "A stack data structure is a Last-In-First-Out (LIFO) collection of elements where items are added and removed from the top only. It operates like a stack of plates, allowing efficient insertion and removal of elements, with access restricted to the topmost item.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/stack.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/stack.svg",
     breakdown: "A stack data structure is a collection of elements that follows the Last-In-First-Out (LIFO) principle, meaning that the last element added to the stack is the first one to be removed. It operates like a stack of plates, where you can only add or remove plates from the top",
     pros:[
       {pro:"Simple Structure: Stacks have a simple and intuitive structure, making them easy to understand and implement"},      
@@ -254,8 +252,8 @@ const LearningData = [
   {
     dataStructure: "Queue",
     shortDescription: "A queue is like a line where the first person to join is the first to leave.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/queue.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/queue.svg",
     breakdown: "A queue data structure is a collection of elements that follows the First-In-First-Out (FIFO) principle, meaning that the first element added to the queue is the first one to be removed. It operates like a queue of people waiting in line, where the person who joins the line first is the first one to be served.",
     pros:[
       {pro:"FIFO Ordering: Queues follow the First-In-First-Out (FIFO) principle, ensuring that the first element enqueued is the first one to be dequeued, making them suitable for scenarios where order preservation is important."},      
@@ -301,8 +299,8 @@ const LearningData = [
   {
     dataStructure: "Trees",
     shortDescription: "A tree data structure is a hierarchical collection of nodes, with each node having a value and zero or more child nodes, organized in a branching structure.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/trees.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/trees.svg",
     breakdown: "A tree data structure is a hierarchical collection of nodes where each node has a value and may have zero or more child nodes, forming a branching structure. Trees are used to represent hierarchical relationships and are commonly employed in computer science and data storage.",
     pros:[
       {pro:"Hierarchical Representation: Trees allow for the representation of hierarchical relationships, making them suitable for modeling hierarchical data such as file systems, organizational charts, and family trees."},      
@@ -352,8 +350,8 @@ const LearningData = [
   {
     dataStructure: "Graphs",
     shortDescription: "A graph data structure is a mathematical representation of relationships between objects, comprising nodes (vertices) and edges (connections) that link these nodes.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/graph.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/graph.svg",
     breakdown: "A graph data structure is a mathematical abstraction comprising a collection of nodes (vertices) and edges (connections) that link pairs of nodes, enabling the representation and analysis of relationships between entities, with various configurations such as directed, undirected, weighted, or cyclic, facilitating efficient traversal and manipulation to solve computational problems.",
     pros:[
       {pro:"Flexibility: Graphs can model complex relationships found in real-world scenarios."},
@@ -414,8 +412,8 @@ const LearningData = [
   {
     dataStructure: "Binary Search",
     shortDescription: "Binary search is a divide-and-conquer algorithm that efficiently locates a target value within a sorted array or list by repeatedly dividing the search interval in half.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/binary-search.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/binary-search.svg",
     breakdown: "Binary search is a divide-and-conquer algorithm used to efficiently locate a target value within a sorted array or list. It works by repeatedly dividing the search interval in half until the target value is found or the search interval is empty. At each step, it compares the target value with the middle element of the current interval and narrows down the search space accordingly.",
     pros:[
       {pro:"Efficiency: Binary search operates with a time complexity of O(log n), making it highly efficient for searching large sorted datasets."},
@@ -457,8 +455,8 @@ const LearningData = [
   {
     dataStructure: "Recursion",
     shortDescription: "To understand recursion, you must first understand recursion",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/recursion.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/recursion.svg",
     breakdown: "A recursive algorithm is one that solves a problem by breaking it down into smaller, simpler instances of the same problem. These smaller instances are then solved recursively until they reach a base case, which is a trivial instance that can be solved directly without further recursion. The solutions to the smaller instances are then combined to obtain the solution to the original problem.",
     steps:[
       {step:"Identify the base case(s) - These are the simplest instances of the problem that can be solved directly."},
@@ -514,8 +512,8 @@ const LearningData = [
   {
     dataStructure: "Sliding Window",
     shortDescription: "The sliding window algorithm efficiently processes a fixed-size window moving through the input data, solving problems by iteratively updating computations on subsets of the dataset.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/sliding-window.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/sliding-window.svg",
     breakdown: "The sliding window algorithm is a technique used in computer science to solve problems involving arrays or strings. It operates by maintaining a window of fixed size that moves through the input data, processing a portion of the data at each step. The key idea is to efficiently perform computations on a subset of the input data by iteratively moving the window through the entire dataset.",
     identify:[
       {trait:"The problem involves finding a substring, subarray, or subsequence that meets certain criteria within a larger dataset."},
@@ -523,7 +521,7 @@ const LearningData = [
       {trait:"The solution can be incrementally updated or calculated as the window slides through the dataset."},
       {trait:"The problem exhibits characteristics like linear time complexity and can be solved iteratively without nested loops."}
     ],
-    example_snippet:"./src/resources/sliding-window-screenshot.png",
+    example_snippet:"./assets/sliding-window-screenshot.png",
     steps:[
       {step:"Initialization: Set up the initial window by defining its starting and ending points."},
       {step:"Process the Window: Perform operations on the elements within the window."},
@@ -564,8 +562,8 @@ const LearningData = [
   {
     dataStructure: "Backtracking",
     shortDescription: "Backtracking is a method for solving problems by trying out different options and going back (backtracking) when reaching a dead end, until a solution is found.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/",
+    smallImg: "./assets/",
+    diagram: "./assets/",
     breakdown: "Backtracking is an algorithmic technique used to systematically search for solutions to combinatorial problems by incrementally building candidates and exploring each possibility, discarding those that fail to satisfy the problem constraints, and backtracking to previous decisions when necessary to explore alternative paths.",
     steps:[
       {step:"Initialization: Set up the initial state of the problem and initialize any necessary data structures or variables."},
@@ -623,8 +621,8 @@ const LearningData = [
   {
     dataStructure: "Hashing Function",
     shortDescription: "",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/",
+    smallImg: "./assets/",
+    diagram: "./assets/",
     breakdown: "",
     pros:[
       {pro:"pro"},      
@@ -663,10 +661,10 @@ const LearningData = [
   {
     dataStructure: "Breadth-First search (BFS)",
     shortDescription: "Breadth-first search (BFS) is a graph traversal algorithm that systematically explores nodes level by level",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/BFS.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/BFS.svg",
     breakdown: "Breadth-first search (BFS) is a traversal algorithm that explores the datastrucutres (trees & graphs) level by level. Starting from a specified vertex or root node, BFS systematically visits all vertices reachable from that point by visiting the nearest unvisited node first before moving to the nodes farther away.",
-    example_snippet:"./src/resources/BFS-screenshot.png",
+    example_snippet:"./assets/BFS-screenshot.png",
     steps:[
       {step:"Initialize an empty queue and a set or array to track visited vertices."},
       {step:"Enqueue the starting node/vertex into the queue and mark it as visited."},
@@ -722,10 +720,10 @@ const LearningData = [
   {
     dataStructure: "Depth-First Search (DFS)",
     shortDescription: "Depth-First Search (DFS) is a graph traversal algorithm that explores as far as possible along each branch before backtracking.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/DFS.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/DFS.svg",
     breakdown: "Depth-first search (DFS) is traversal algorithm that explores as far as possible along each branch before backtracking. Starting from a specified node/vertex, DFS systematically explores all nodes/vertices reachable from that vertex by recursively visiting adjacent unvisited nodes/vertices.",
-    example_snippet:"./src/resources/DFS-screenshot.png",
+    example_snippet:"./assets/DFS-screenshot.png",
     steps:[
       {step:"Initialize a set or array to track visited vertices and an empty stack to store vertices to be explored."},
       {step:"Push the starting vertex onto the stack and mark it as visited."},
@@ -790,10 +788,10 @@ const LearningData = [
   {
     dataStructure: "Greedy",
     shortDescription: "A greedy algorithm is an approach to problem-solving that makes locally optimal choices at each step with the aim of finding a global optimum.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/",
+    smallImg: "./assets/",
+    diagram: "./assets/",
     breakdown: "A greedy algorithm is an approach to problem-solving that makes the locally optimal choice at each step with the hope of finding a global optimum. In other words, it selects the best possible option at the current moment without considering the consequences of that choice in the future steps. Greedy algorithms are often used for optimization problems where finding an exact solution is computationally expensive or impractical. While greedy algorithms are relatively simple and efficient, they may not always produce the most optimal solution in every case, as they lack foresight and may overlook better choices that lead to a truly optimal solution.",
-    example_snippet:"./src/resources/greedy-problem-screenshot.png",
+    example_snippet:"./assets/greedy-problem-screenshot.png",
     steps:[
       {step:"Initialization: Initialize the solution with an empty set or a default starting solution."},
       {step:"Greedy Choice: Select the best candidate according to the selection function."},
@@ -850,10 +848,10 @@ const LearningData = [
    {
     dataStructure: "Two Pointer",
     shortDescription: "The two-pointer algorithm is a technique that involves using two pointers to efficiently solve problems by iterating through an array or list and manipulating the pointers based on specific conditions",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/two-pointer.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/two-pointer.svg",
     breakdown: "The two-pointer technique involves using two pointers that traverse through an array or list from different positions or in different directions. These pointers can be adjusted based on certain conditions to solve specific problems efficiently.",
-    example_snippet:"./src/resources/two-pointer-screenshot.png",
+    example_snippet:"./assets/two-pointer-screenshot.png",
     steps:[
       {step:"Initialize pointers: Depending on the problem, initialize two pointers at different positions in the array or list."},
       {step:"Iterate through the array or list: While certain conditions are met, move the pointers accordingly."},
@@ -905,8 +903,8 @@ const LearningData = [
   {
     dataStructure: "Dynamic Programing",
     shortDescription: "Dynamic programming is a method for solving problems by breaking them into smaller, simpler subproblems and using the solutions to those subproblems to solve the larger problem efficiently.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/",
+    smallImg: "./assets/",
+    diagram: "./assets/",
     breakdown: "Dynamic programming is a problem-solving technique used to solve problems by breaking them down into simpler subproblems and solving each subproblem only once, storing the solutions to subproblems in a table to avoid redundant computations, and then combining these solutions to solve the original problem.",
     steps:[
       {step:"Identify Overlapping Subproblems: Identify whether the problem can be broken down into smaller subproblems, and if solving the same subproblem multiple times is inefficient."},
@@ -967,11 +965,11 @@ const LearningData = [
   {
     dataStructure: "Bubble Sort",
     shortDescription: "Bubble sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order until the list is sorted.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/bubble-sort.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/bubble-sort.svg",
     breakdown: "Bubble sort is a simple sorting algorithm that repeatedly steps through the list to be sorted, compares each pair of adjacent items, and swaps them if they are in the wrong order. This process is repeated until no swaps are needed, which indicates that the list is sorted.",
     
-    example_snippet:"./src/resources/bubble-sort-screenshot.png",
+    example_snippet:"./assets/bubble-sort-screenshot.png",
     steps:[
       {step:"Start from the beginning of the list."},
       {step:"Compare the first two elements. If the first element is greater than the second element, swap them."},
@@ -1019,10 +1017,10 @@ const LearningData = [
   {
     dataStructure: "Quick Sort",
     shortDescription: "Quick Sort is an efficient sorting algorithm that recursively partitions an array around a chosen pivot element and sorts the resulting sub-arrays in-place.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/quick-sort.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/quick-sort.svg",
     breakdown: "",
-    example_snippet:"./src/resources/quick-sort-screenshot.png",
+    example_snippet:"./assets/quick-sort-screenshot.png",
     steps:[
       {step:"Choose a Pivot: Select an element from the array, called the pivot. The choice of the pivot can significantly affect the efficiency of the algorithm. Common strategies include selecting the first element, the last element, the middle element, or a randomly chosen element."},
       {step:"Partitioning: Rearrange the array elements in such a way that all elements smaller than the pivot are moved to its left, and all elements greater than the pivot are moved to its right. The pivot itself takes its correct sorted position.Partitioning: Rearrange the elements in the array so that all elements less than the pivot are placed before it, and all elements greater than the pivot are placed after it. After this partitioning step, the pivot is in its final sorted position. This process is sometimes referred to as the partition step."},
@@ -1072,10 +1070,10 @@ const LearningData = [
   {
     dataStructure: "Merge Sort",
     shortDescription: "Merge Sort is a stable and efficient sorting algorithm that divides the array into smaller sub-arrays, recursively sorts them, and then merges them back together in sorted order.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/merge-sort.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/merge-sort.svg",
     breakdown: "Merge Sort is a stable and efficient sorting algorithm that divides an array into smaller sub-arrays, recursively sorts these sub-arrays, and then merges them back together in sorted order. It follows the Divide and Conquer strategy, achieving a time complexity of O(n log n) in all cases, making it predictable and reliable for sorting large datasets.",
-    example_snippet:"./src/resources/merge-sort-screenshot.png",
+    example_snippet:"./assets/merge-sort-screenshot.png",
     steps:[
       {step:"Divide: Divide the unsorted array into two halves recursively until each sub-array contains only one element."},
       {step:"Merge: Merge the sorted sub-arrays back together by comparing elements from each sub-array and placing them in the correct order."}
@@ -1128,8 +1126,8 @@ const LearningData = [
   {
     dataStructure: "Node",
     shortDescription: "a node is a fundamental building block of various data structures, particularly linked data structures such as linked lists, trees, graphs, and more.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/node.svg",
+    smallImg: "./assets/",
+    diagram: "./assets/node.svg",
     breakdown: "A node is an individual element within a data structure that contains data or information, and optionally one or more references or pointers to other nodes, depending on the type of data structure.",
 
     resources: [
@@ -1152,8 +1150,8 @@ const LearningData = [
   {
     dataStructure: "Memoization",
     shortDescription: "Memoization is the process of storing the results of expensive function calls and returning the cached result when the same inputs occur again.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/",
+    smallImg: "./assets/",
+    diagram: "./assets/",
     breakdown: "Memoization is a technique used to optimize the performance of functions, particularly in situations where the same computation is performed repeatedly with the same inputs. The idea behind memoization is to cache the results of expensive function calls and return the cached result when the same inputs occur again.",
     steps:[
       {step:"Identify Repeated Computations: Determine which parts of your code involve repeated computations with the same inputs."},
@@ -1205,8 +1203,8 @@ const LearningData = [
   {
     dataStructure: "Caching",
     shortDescription: "Caching: process of storing frequently accessed or computationally expensive data in a high-speed storage medium for faster access and improved system performance.",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/",
+    smallImg: "./assets/",
+    diagram: "./assets/",
     breakdown: "Caching is a technique used to store frequently accessed or computationally expensive data in a location that allows for faster access compared to fetching the data from its original source every time it is needed. The cached data is typically stored in a high-speed storage medium, such as cache memory or a dedicated caching server",
     steps:[
       {step:"Identify Caching Opportunities: Identify the data or resources that are frequently accessed or computationally expensive and would benefit from caching."},
@@ -1263,8 +1261,8 @@ const LearningData = [
   {
     dataStructure: "Big O (time/space complexity)",
     shortDescription: "",
-    smallImg: "./src/resources/",
-    diagram: "./src/resources/",
+    smallImg: "./assets/",
+    diagram: "./assets/",
     breakdown: "",
     pros:[
       {pro:"pro"},      
