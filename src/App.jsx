@@ -35,13 +35,13 @@ function App() {
       questionIconClicked = {questionIconClicked}
       />
       <Routes>
-        <Route path="/" element={
+        <Route path="/Learning-Hub" element={
           <Learning 
             questionIconClicked = {questionIconClicked}
             setQuestionIconClicked = {setQuestionIconClicked}
           />
         }/>
-        <Route path="/practice" element={
+        <Route path="/Learning-Hub/practice" element={
           <Practice 
             questionIconClicked = {questionIconClicked}
             setQuestionIconClicked = {setQuestionIconClicked}

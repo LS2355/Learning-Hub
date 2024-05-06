@@ -18,10 +18,10 @@ export function Navbar () {
       </div>
     <ul className={` flex-col xs:flex-row w-full xs:w-auto mb-1 xs:mb-0 ${menuIsOpen? "flex": "hidden xs:flex"}`}> {/* if menuIsOpen == true , then set display to flex else hide*/}
       <li className="list-none w-full xs:w-auto text-center xs:text-left">
-        <NavLink to="/" className="block no-underline text-subtext p-2 my-1 mx-2 rounded-lg hover:bg-black/75">Learning</NavLink> {/* i want this do be the default page open*/}
+        <NavLink to="/Learning-Hub" className="block no-underline text-subtext p-2 my-1 mx-2 rounded-lg hover:bg-black/75">Learning</NavLink> {/* i want this do be the default page open*/}
       </li>
       <li className="list-none w-full xs:w-auto text-center xs:text-left">
-        <NavLink to="/practice" className="block no-underline text-subtext p-2 my-1 mx-2 rounded-lg hover:bg-black/75">Practice</NavLink>
+        <NavLink to="/Learning-Hub/practice" className="block no-underline text-subtext p-2 my-1 mx-2 rounded-lg hover:bg-black/75">Practice</NavLink>
       </li>
       <li className="list-none w-full xs:w-auto text-center xs:text-left">
         <NavLink to="/settings" className="block no-underline text-subtext p-2 my-1 mx-2 rounded-lg hover:bg-black/75">Settings</NavLink> 
