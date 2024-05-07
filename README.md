@@ -26,7 +26,7 @@ datastructures and algorithms.</h4>
 <p> - Why no create/login account option?  simply put I dont want the responsibility of holding someones data for a site that i'm not going to be constantly monitoring. If enough people would like that option, I might add it but for now all user data is saved in your local storage (so don't clear it)</p>
 
 #### ⚠️Important Information⚠️
-  <p style="background:#780a0A; padding: 5px 3px; width:80%; border-radius:5px;">all data is user inputed data is stored in your local storage. so DON'T CLEAR IT
+  <p style=" background:#780A1a ; padding: 5px 3px; width:80%; border-radius:5px;">all data is user inputed data is stored in your local storage. so DON'T CLEAR IT <br />
 Practice section will does work but i am not hosting the server anywhere so it will not be able to fetch data from leetcode</p>
 
 ---
