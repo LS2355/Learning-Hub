@@ -2,10 +2,9 @@
 <h1 style="color:white">Learning Hub</h1>
 
  <!-- view live site link -->
- <a href="https://ls2355.github.io/Learning-Hub">
+ <a href="https://ls2355.github.io/Learning-Hub/">
   <!-- styleing is in the src url= https://custom-icon-badges.demolab.com/badge/ <text>-<color> ?style=<style> &logo=<logo>   -->
    <img align="right" alt="My portfolio" title="My portfolio" src="https://custom-icon-badges.demolab.com/badge/-View_Live_site-purple?style=for-the-badge&logoColor=white&logo=portfolioe"/></a> 
-   ![My portfolio](https://custom-icon-badges.demolab.com/badge/-View_Live_site-purple?style=for-the-badge&logoColor=white&logo=portfolioe)
 <!-- for more info got to https://github.com/DenverCoder1/custom-icon-badges -->
 
 
