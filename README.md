@@ -1,110 +1,59 @@
- 
-<h1 style="color:white">Learning Hub</h1>
+# Learning Hub
 
- <!-- view live site link -->
- <a href="https://ls2355.github.io/Learning-Hub"> | <img align="right" alt="My portfolio" title="My portfolio" src="https://custom-icon-badges.demolab.com/badge/-View_Live_site-purple?style=for-the-badge&logoColor=white&logo=portfolioe"/></a> 
-  <!-- styleing is in the src url= https://custom-icon-badges.demolab.com/badge/ <text>-<color> ?style=<style> &logo=<logo>   -->
+A personal workspace for learning data structures and algorithms, built with React and Vite. Navigation stays on the left, including a compact rail on phones.
 
-<!-- for more info got to https://github.com/DenverCoder1/custom-icon-badges -->
+## Run locally
 
+Use Node.js 22.12+ (or 24).
 
-<h2 style="color:#e3de40"> Purpose: </h2>
-<h4> The purpose of this project is to help others including myself learn/study
-datastructures and algorithms.</h4>
-
-<h2 style="color:#04857a"> Features </h2>
-  <h4>List of Features in order</h4>
-  <ul>
-    <li>Learning Page</li>
-    <li>Practice Page</li>
-    <li>Customization Page(not done)</li>
-    <li>questions Box</li>
-  </ul>
-
-#### 🗒️ NOTE <br />
-
-<p> - Why no create/login account option?  simply put I dont want the responsibility of holding someones data for a site that i'm not going to be constantly monitoring. If enough people would like that option, I might add it but for now all user data is saved in your local storage (so don't clear it)</p>
-
-#### ⚠️Important Information⚠️
-  <p style=" background:#780A1a ; padding: 5px 3px; width:80%; border-radius:5px;">all data is user inputed data is stored in your local storage. so DON'T CLEAR IT <br />
-Practice section will does work but i am not hosting the server anywhere so it will not be able to fetch data from leetcode</p>
-
----
-<h3>Learning Page/h3>
-  <img alt="image of learning Page" src="./README_images/Learning-img.png">
-  <p>The Learning page is where you can begin to learn about data structures and algorithms. There will be multiple subjects that you can select to learn about.</p>
-  <p>the layout is simple it will have a short description, diagram, more in depth description, some video recommandations, and lastly my sources</p>
-
----
-<h3>Practice Page</h3>
-  <img alt="image of <featured section>" src="./README_images/Practice-img.png">
-  <p>The practice Page is practicaly a large table that is connected to the leetcode GraphQl api where you can and your completion/progress.</p>
-  <p>This is just mostly to keep track of the work that you have done</p>
-
----
-<h3>Customization Page</h3>
-  <p>the plan for this is to connect be able to change the color pallet and slight styling of the application but im not sure when i'll have time to add this as I have another project i want to get done before I come back to this</p>
-
----
-<h3>Questions box</h3>
-  <img alt="image of <featured section>" src="./">
-  <p>The Questions box will populate diffrently depending on what page that you are on.</p>
-  <p>These questions are some that I thought people might have, as well as others that have been asked of me.</p>
-  <p>if you have anything you would like to ask please feel free to reach out in the issues or through my linkedIn</p>
-
----
-
-<h2>Installation and Running 🌐</h2>
-  <ol>
-  <li>download Zip or clone Repo</li>
-
-``` 
-  git clone <repo>
+```sh
+cd client
+npm ci
+npm run dev
 ```
 
-  <li>cd into the server folder, install dependancies, run server</li>
+Open http://127.0.0.1:8008/Learning-Hub/.
 
-``` 
-  cd ./server
-  npm i
-  npm start  
-```  
-<li>then just run index.html</li>
-<li>if you want to run dev</li>
-
-``` git
-  cd ../
-  cd ./client
-  npm i
-  npm run preview
+```sh
+npm run test
+npm run lint
+npm run build
+npm run preview
 ```
-  </ol>
 
+## Features
 
-## Tech Stack:
-<!-- to cange color to hex value put %23<value> after color -->
+- 25 searchable concepts, category and completion filters, grid/list views, and saved topics.
+- Lesson explanations, JavaScript references, visual walkthroughs, and external resources.
+- Practice tracker with a 41-problem catalog, custom LeetCode URLs, status and difficulty filters, sorting, notes, removal with undo, and an isolated demo collection.
+- Progress dashboard with actual recorded activity, a daily streak, and suggested learning paths.
+- Focus sessions with pause, resume, and configurable duration.
+- Light/dark/system themes, ten accents, density controls, and reduced motion support.
+- Validated JSON export/import and reset confirmation.
+- Theme-aware outline logo loader, with a pausable, three-size preview in Appearance.
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) 
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) 
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) 
-![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) 
-![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) 
-![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) 
-![vite](https://custom-icon-badges.demolab.com/badge/-VITE-%23646CFF?style=for-the-badge&logoColor=%23fff712&logo=vite)
-![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) 
-![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white) 
-![JSON](https://custom-icon-badges.demolab.com/badge/-JSON-grey?style=for-the-badge&logoColor=%23127808&logo=JSON)
-![YAML](https://custom-icon-badges.demolab.com/badge/-YAML-black?style=for-the-badge&logoColor=%23CB171E&logo=YAML)
-![GraphQl](https://custom-icon-badges.demolab.com/badge/-API-white?style=for-the-badge&logoColor=%23E10098&logo=graphql)
-![Rollup js](https://custom-icon-badges.demolab.com/badge/-Rollup.js-%23E61414?style=for-the-badge&logoColor=%23EC4A3F&logo=rollup.js)
-![git](https://custom-icon-badges.demolab.com/badge/-Git-%23575757?style=for-the-badge&logoColor=%23F05032&logo=git)
-![Windows](https://custom-icon-badges.demolab.com/badge/-Windows-white?style=for-the-badge&logoColor=%230078D6&logo=windows)
-![vs code](https://custom-icon-badges.demolab.com/badge/-VS_CODE-black?style=for-the-badge&logoColor=%23007ACC&logo=visual-studio-code)
-<details><summary>Notes to self (just ignore this)</summary>
+## Data and deployment
 
-should i just cut out the customization section completely??
+Progress stays in browser local storage. Existing legacy practice data is migrated on first use. Export a backup before clearing browser data or moving devices. Storage failures are reported without silently overwriting unreadable data.
 
+The client requires no backend. It does not sync LeetCode submissions, execute lesson code, or create user accounts. Practice links open LeetCode; statuses are recorded manually. The original experimental GraphQL proxy remains in server/ for reference and is not used by the rebuilt client.
 
-</details>
+Hash-based routes work on static hosting and survive refreshes. The Vite base remains /Learning-Hub/ for GitHub Pages. Deployment is configured in .github/workflows/deploy.yml.
+
+## Appearance and logo loader
+
+Open **Appearance** in the left sidebar. Theme mode (dark, light, or system) and accent color are independent. Available accents: mint, blue, violet, amber, rose, coral, cyan, lime, lavender, and slate. Color preferences survive reloads and backup export/import.
+
+The reusable loader preserves both contours of the Learning Hub logo. A faint outline sits beneath a constant-width highlight whose tail fades along the path. On each full page load, a full-screen startup splash traces the logo once while fading its full-color fill from 0% visibility to 100% brightness in sync with animation progress, reveals “Learning Hub” with the same overlapping smoke-and-letter treatment as the Supa Controller site, and fades into the workspace after approximately 2.5 seconds. Sidebar navigation does not replay it. Skip intro or Escape dismisses it immediately; reduced motion uses a brief static introduction. It also appears during the real lazy-loading boundary for Appearance. Open Appearance to see the continuous preview at three sizes and pause/resume it.
+
+```jsx
+import { LogoOutlineLoader } from './components/LogoOutlineLoader';
+
+<LogoOutlineLoader size={64} />
+<LogoOutlineLoader size={48} color="#9fc5fc" duration={1200} trailLifetime={216} />
+<LogoOutlineLoader paused label="Learning Hub" />
+```
+
+`duration` is the full cycle in milliseconds. The default cycle is approximately 976 ms, with an 800 ms head lap and an 18% delayed tail. `trailLifetime` must be positive and shorter than the cycle. SVG gradient and mask IDs are unique per instance. Animation stops in hidden tabs and on unmount; reduced motion renders a readable static outline.
+
+Shared logo geometry and timing are in `client/src/lib/logo-trace.js`; palette names are in `client/src/data/themes.js` and color roles in `client/src/index.css`. See [DESIGN.md](DESIGN.md) for interface constraints and motion guidance.
